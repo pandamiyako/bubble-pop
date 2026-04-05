@@ -1,1513 +1,805 @@
 <!DOCTYPE html>
-<!-- saved from url=(0026)https://claude.ai/projects -->
-<html data-build-id="97cedc7bf4" data-git-hash="db38ddfa56efa8b72afbfca77b01fa97cedc7bf4" data-build-timestamp="1775359404" data-version="1.0.0" data-env="" lang="ja-JP" data-theme="claude" data-mode="dark" class="h-screen antialiased scroll-smooth" style="--font-user-message: var(--font-sans-serif); --font-claude-response: var(--font-serif);"><head data-ion-ip-country="JP"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="preconnect" href="https://assets-proxy.anthropic.com/" crossorigin=""><link rel="dns-prefetch" href="https://assets-proxy.anthropic.com/"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Claude</title><meta name="description" content="Claude is Anthropic&#39;s AI, built for problem solvers. Tackle complex challenges, analyze data, write code, and think through your hardest work."><meta name="apple-itunes-app" content="app-id=6473753684"><meta property="og:type" content="website"><meta property="og:site_name" content="Claude"><meta property="og:image" content="https://claude.ai/images/claude_ogimage.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><link rel="icon" type="image/svg+xml" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cd02a42d9-Vq_H3mgS.svg"><link rel="icon" type="image/png" sizes="32x32" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ce67964e7-CAX1bqSh.png"><link rel="icon" type="image/png" sizes="16x16" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c03e51811-DebilQLI.png"><link rel="shortcut icon" href="https://claude.ai/favicon.ico"><link rel="apple-touch-icon" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c129d018a-jJjJELY8.png"><link rel="apple-touch-startup-image" href="https://claude.ai/images/claude_app_icon.png"><link rel="manifest" href="https://claude.ai/manifest.json"><meta name="mobile-web-app-capable" content="yes"><link rel="preload" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cc27851ad-CFxw3nG7.woff2" as="font" type="font/woff2" crossorigin=""><link rel="preload" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c66fc489e-C-BHYa_K.woff2" as="font" type="font/woff2" crossorigin=""><script type="text/javascript" async="" src="./bubble pop_files/lupk8zyo"></script><script type="text/javascript" src="./bubble pop_files/f12a4347e1080fb88155.js.ダウンロード" async="" status="loaded"></script><script nonce="">void 0===globalThis.process&&(globalThis.process={env:{},cwd:function(){return"/"}}),void 0===globalThis.global&&(globalThis.global=globalThis)</script><script type="application/ld+json" nonce="">{
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "name": "Claude",
-            "alternateName": ["Claude.ai", "Claude by Anthropic"],
-            "url": "https://claude.com"
-          },
-          {
-            "@type": "Organization",
-            "name": "Anthropic",
-            "url": "https://www.anthropic.com",
-            "logo": "https://claude.ai/images/claude_ogimage.png",
-            "sameAs": [
-              "https://x.com/AnthropicAI",
-              "https://www.linkedin.com/company/anthropic",
-              "https://www.youtube.com/@anthropic-ai"
-            ]
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BUBBLE POP</title>
+</head>
+<body>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{width:100%;height:100%;background:#06060f;}
+body{display:flex;align-items:flex-start;justify-content:center;}
+#gw{width:100%;max-width:480px;min-height:100svh;display:flex;flex-direction:column;align-items:center;padding:16px 16px 24px;background:#06060f;font-family:'Exo 2',sans-serif;position:relative;overflow:hidden;}
+#gw::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 10%,rgba(100,60,220,0.12) 0%,transparent 65%);pointer-events:none;}
+#ms{position:absolute;inset:0;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(6,6,15,0.97);z-index:20;gap:14px;}
+#ms-title{font-family:'Orbitron',monospace;font-size:24px;font-weight:900;color:#fff;letter-spacing:3px;}
+#ms-sub{font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:1px;}
+.mcard{width:270px;padding:14px 18px;border-radius:12px;cursor:pointer;background:rgba(255,255,255,0.04);border:1.5px solid rgba(255,255,255,0.12);transition:border-color 0.2s,background 0.2s;}
+.mcard:hover{background:rgba(255,255,255,0.08);border-color:rgba(180,150,255,0.5);}
+.mcard.sel{border-color:rgba(180,150,255,0.9);background:rgba(120,60,220,0.15);}
+.mcard-t{font-family:'Orbitron',monospace;font-size:12px;font-weight:700;color:#fff;margin-bottom:4px;}
+.mcard-d{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.6;}
+.mtag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:10px;margin-bottom:5px;letter-spacing:1px;}
+.tsame{background:rgba(100,60,220,0.3);color:rgba(180,150,255,0.9);}
+.tdiff{background:rgba(220,60,60,0.25);color:rgba(255,120,100,0.9);}
+.gbtn{padding:11px 38px;border:none;border-radius:8px;background:rgba(100,60,220,0.85);color:#fff;font-family:'Orbitron',monospace;font-size:13px;font-weight:700;letter-spacing:2px;cursor:pointer;transition:background 0.2s,transform 0.1s;}
+.gbtn:hover{background:rgba(80,40,200,0.95);}
+.gbtn:active{transform:scale(0.96);}
+#hud{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:440px;margin-bottom:6px;position:relative;z-index:2;}
+.hl{text-align:center;width:100px;flex-shrink:0;}
+.hl-label{font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.35);text-transform:uppercase;margin-bottom:2px;}
+.hl-val{font-family:'Orbitron',monospace;font-size:20px;font-weight:700;color:#fff;}
+.hl-best{font-family:'Orbitron',monospace;font-size:20px;font-weight:700;color:rgba(255,210,0,0.9);}
+#trw{position:relative;width:52px;height:52px;flex-shrink:0;}
+#tsvg{transform:rotate(-90deg);}
+#trbg{stroke:rgba(255,255,255,0.08);}
+#tr{stroke:rgba(160,130,255,0.9);stroke-linecap:round;transition:stroke-dashoffset 1s linear,stroke 0.3s;}
+#tt{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Orbitron',monospace;font-size:13px;font-weight:700;color:#fff;}
+#pb-wrap{display:flex;align-items:center;gap:6px;width:100%;max-width:440px;margin-bottom:4px;position:relative;z-index:2;justify-content:space-between;}
+#pb{font-size:11px;letter-spacing:1px;padding:3px 10px;border-radius:20px;background:rgba(120,60,240,0.2);color:rgba(180,150,255,0.9);border:0.5px solid rgba(120,60,240,0.4);font-family:'Orbitron',monospace;}
+#mbadge{font-size:10px;letter-spacing:1px;padding:3px 10px;border-radius:20px;font-family:'Orbitron',monospace;font-weight:700;}
+.mb-same{background:rgba(120,60,240,0.2);color:rgba(180,150,255,0.9);border:0.5px solid rgba(120,60,240,0.4);}
+.mb-diff{background:rgba(220,60,60,0.18);color:rgba(255,120,100,0.9);border:0.5px solid rgba(220,60,60,0.35);}
+#speed-info{font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1px;min-width:30px;text-align:right;}
+#bonus-bar{display:flex;gap:8px;align-items:stretch;justify-content:center;width:100%;max-width:440px;margin-bottom:4px;position:relative;z-index:2;min-height:44px;visibility:hidden;}
+#bonus-bar.active{visibility:visible;}
+.bchip{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5px 12px;border-radius:10px;font-family:'Orbitron',monospace;transition:opacity 0.3s,border-color 0.3s,background 0.3s;flex:1;gap:2px;}
+.bchip-row{display:flex;align-items:baseline;gap:6px;}
+.bchip-label{font-size:9px;letter-spacing:1px;color:inherit;opacity:0.7;}
+.bchip-pts{font-size:16px;font-weight:700;}
+.bchip-count{font-size:9px;opacity:0.6;}
+#bc-duo{background:rgba(255,160,0,0.08);border:1px solid rgba(255,160,0,0.2);color:rgba(255,190,60,0.5);}
+#bc-duo.lit{border-color:rgba(255,160,0,0.75);color:rgba(255,205,80,1);background:rgba(255,160,0,0.15);}
+#bc-duo.cap{border-color:rgba(255,160,0,0.45);color:rgba(255,205,80,0.75);background:rgba(255,160,0,0.1);}
+#bc-tri{background:rgba(0,200,150,0.08);border:1px solid rgba(0,200,150,0.2);color:rgba(60,220,170,0.5);}
+#bc-tri.lit{border-color:rgba(0,200,150,0.75);color:rgba(80,240,185,1);background:rgba(0,200,150,0.15);}
+#bc-tri.cap{border-color:rgba(0,200,150,0.45);color:rgba(80,240,185,0.75);background:rgba(0,200,150,0.1);}
+#hist{display:flex;gap:5px;align-items:center;justify-content:center;width:100%;max-width:440px;margin-bottom:5px;position:relative;z-index:2;min-height:36px;}
+.hs{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;flex-shrink:0;transition:transform 0.2s;}
+.hs.empty{background:rgba(255,255,255,0.04);border:1.5px dashed rgba(255,255,255,0.1);}
+.hs.new{transform:scale(1.15);}
+.hdot{width:100%;height:100%;border-radius:50%;position:relative;overflow:hidden;}
+.hbadge{position:absolute;top:-4px;right:-4px;font-family:'Orbitron',monospace;font-size:7px;font-weight:700;padding:1px 3px;border-radius:4px;color:#111;z-index:2;line-height:1.4;}
+#ci{font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1px;margin-bottom:5px;height:32px;min-height:32px;text-align:center;position:relative;z-index:2;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+#ci span{color:rgba(200,170,255,0.95);font-weight:600;}
+#ci .danger{color:rgba(255,100,80,0.95);font-weight:700;}
+#grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,2.5vw,14px);width:min(92vw,420px);position:relative;z-index:2;}
+.bw{aspect-ratio:1;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;}
+.b-scale-wrap{width:88%;height:88%;display:flex;align-items:center;justify-content:center;position:relative;transform-origin:center center;transition:transform 0.25s ease-out;}
+.bo{width:100%;height:100%;border-radius:50%;position:relative;cursor:pointer;animation:flt 3.2s ease-in-out infinite;}
+.bw:nth-child(1) .bo{animation-delay:0s;}.bw:nth-child(2) .bo{animation-delay:0.38s;}.bw:nth-child(3) .bo{animation-delay:0.76s;}
+.bw:nth-child(4) .bo{animation-delay:1.14s;}.bw:nth-child(5) .bo{animation-delay:1.52s;}.bw:nth-child(6) .bo{animation-delay:1.9s;}
+.bw:nth-child(7) .bo{animation-delay:2.28s;}.bw:nth-child(8) .bo{animation-delay:2.66s;}.bw:nth-child(9) .bo{animation-delay:3.04s;}
+@keyframes flt{0%{transform:translateY(0) scale(1);}30%{transform:translateY(-5px) scale(1.02);}60%{transform:translateY(-3px) scale(0.99);}100%{transform:translateY(0) scale(1);}}
+.bo:active{animation:none!important;transform:scale(0.88)!important;}
+@keyframes shakeB{0%,100%{transform:translateX(0);}20%{transform:translateX(-3px);}40%{transform:translateX(3px);}60%{transform:translateX(-2px);}80%{transform:translateX(2px);}}
+.bo.shaking{animation:shakeB 0.25s ease-in-out infinite!important;}
+.bb{position:absolute;inset:0;border-radius:50%;}
+.br{position:absolute;inset:0;border-radius:50%;border:7px solid transparent;}
+.bs1{position:absolute;top:9%;left:15%;width:32%;height:25%;border-radius:50%;background:rgba(255,255,255,0.55);filter:blur(3px);pointer-events:none;}
+.bs2{position:absolute;bottom:12%;right:14%;width:17%;height:13%;border-radius:50%;background:rgba(255,255,255,0.2);filter:blur(2px);pointer-events:none;}
+.timer-ring-svg{position:absolute;inset:0;width:100%;height:100%;border-radius:50%;pointer-events:none;z-index:3;}
+.bo.rev{animation:revB 0.35s cubic-bezier(0.34,1.56,0.64,1) forwards!important;}
+@keyframes revB{0%{transform:scale(0.08);opacity:0.1;}70%{transform:scale(1.08);opacity:1;}100%{transform:scale(1);opacity:1;}}
+.bo.pop{animation:popB 0.22s ease-out forwards!important;}
+@keyframes popB{0%{transform:scale(1);opacity:1;}50%{transform:scale(1.3);opacity:0.4;}100%{transform:scale(0.05);opacity:0;}}
+.sf{position:absolute;font-family:'Orbitron',monospace;font-size:13px;font-weight:700;color:#fff;pointer-events:none;z-index:10;animation:fup 0.85s ease-out forwards;}
+@keyframes fup{0%{opacity:1;transform:translateY(0) scale(1);}100%{opacity:0;transform:translateY(-50px) scale(1.1);}}
+#bbar{display:flex;align-items:center;justify-content:center;width:100%;max-width:440px;margin-top:10px;position:relative;z-index:2;}
+#bnuke{padding:9px 28px;border:none;border-radius:8px;background:rgba(255,60,60,0.15);border:1.5px solid rgba(255,80,80,0.4);color:rgba(255,120,120,0.9);font-family:'Orbitron',monospace;font-size:10px;font-weight:700;letter-spacing:1px;cursor:pointer;transition:background 0.2s,transform 0.1s;}
+#bnuke:hover:not(:disabled){background:rgba(255,60,60,0.28);}
+#bnuke:active:not(:disabled){transform:scale(0.96);}
+#bnuke:disabled{opacity:0.25;cursor:not-allowed;}
+#ov{position:absolute;inset:0;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(6,6,15,0.95);z-index:20;gap:9px;}
+#ov-title{font-family:'Orbitron',monospace;font-size:22px;font-weight:900;color:#fff;letter-spacing:3px;}
+#ov-score{font-family:'Orbitron',monospace;font-size:44px;font-weight:700;color:rgba(180,150,255,0.95);}
+#ov-best-wrap{display:flex;flex-direction:column;align-items:center;gap:2px;}
+#ov-best-label{font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.35);text-transform:uppercase;}
+#ov-best{font-family:'Orbitron',monospace;font-size:18px;font-weight:700;color:rgba(255,210,0,0.9);}
+#ov-new-best{font-family:'Orbitron',monospace;font-size:13px;color:rgba(255,210,0,0.95);letter-spacing:2px;min-height:18px;}
+@keyframes nbAnim{0%{transform:scale(0.5);opacity:0;}100%{transform:scale(1);opacity:1;}}
+.nb-show{animation:nbAnim 0.6s ease-out forwards;}
+#ov-history{display:flex;flex-direction:column;gap:3px;align-items:center;width:220px;}
+.hsr{display:flex;justify-content:space-between;width:100%;font-size:11px;color:rgba(255,255,255,0.35);font-family:'Orbitron',monospace;}
+.hsr.latest{color:rgba(255,255,255,0.7);}
+#ov-sub{font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:1px;}
+.sbtn{padding:7px 20px;border:none;border-radius:6px;background:rgba(255,255,255,0.05);border:0.5px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.45);font-family:'Exo 2',sans-serif;font-size:11px;cursor:pointer;transition:background 0.2s;}
+.sbtn:hover{background:rgba(255,255,255,0.1);}
+#sc{font-size:10px;color:rgba(180,150,255,0.9);letter-spacing:1px;min-height:14px;}
+#lives{display:flex;gap:5px;align-items:center;}
+.life{font-size:18px;line-height:1;transition:transform 0.2s,opacity 0.3s;}
+.life.lost{opacity:0.15;transform:scale(0.75);}
+@keyframes lifeLost{0%{transform:scale(1.4);}100%{transform:scale(0.75);opacity:0.15;}}
+.life.losing{animation:lifeLost 0.35s ease-out forwards;}
+
+/* スタート演出オーバーレイ */
+#intro-overlay{position:absolute;inset:0;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(6,6,15,0.93);z-index:25;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none;}
+#intro-bubble-wrap{position:relative;width:min(80vw,340px);height:min(80vw,340px);display:flex;align-items:center;justify-content:center;}
+/* イントロバブルのラッパーは親と同サイズ */
+#ib-wrap-inner{width:100%;height:100%;position:relative;display:flex;align-items:center;justify-content:center;}
+/* 外側グロー */
+.ib-glow{position:absolute;inset:-18%;border-radius:50%;background:radial-gradient(circle,rgba(140,80,255,0.38) 0%,rgba(60,30,180,0.18) 50%,transparent 72%);animation:ibGlowPulse 2s ease-in-out infinite;}
+@keyframes ibGlowPulse{0%,100%{transform:scale(1);opacity:0.7;}50%{transform:scale(1.08);opacity:1;}}
+/* 本体 */
+.ib-body{position:absolute;inset:0;border-radius:50%;
+  background:radial-gradient(circle at 38% 30%,rgba(220,200,255,0.32) 0%,rgba(140,80,255,0.20) 35%,rgba(60,20,160,0.22) 70%,rgba(20,10,60,0.28) 100%);
+  border:3px solid rgba(200,170,255,0.80);
+  box-shadow:0 0 40px 12px rgba(140,80,255,0.55),0 0 80px 24px rgba(100,40,220,0.30),inset 0 0 30px 8px rgba(160,100,255,0.22);}
+/* 虹色リム */
+.ib-rim{position:absolute;inset:-2px;border-radius:50%;border:2px solid transparent;background:conic-gradient(rgba(255,100,120,0.7),rgba(100,150,255,0.7),rgba(255,220,60,0.7),rgba(80,240,180,0.7),rgba(200,100,255,0.7),rgba(255,100,120,0.7)) border-box;-webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);-webkit-mask-composite:destination-out;mask-composite:exclude;animation:ibRimSpin 4s linear infinite;}
+@keyframes ibRimSpin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+/* ハイライト */
+.ib-shine1{position:absolute;top:9%;left:16%;width:34%;height:26%;border-radius:50%;background:rgba(255,255,255,0.75);filter:blur(6px);pointer-events:none;}
+.ib-shine2{position:absolute;bottom:14%;right:14%;width:18%;height:14%;border-radius:50%;background:rgba(255,255,255,0.40);filter:blur(3px);pointer-events:none;}
+.ib-shine3{position:absolute;top:50%;left:50%;width:8%;height:8%;border-radius:50%;background:rgba(255,255,255,0.90);filter:blur(2px);transform:translate(-50%,-50%);pointer-events:none;}
+/* ラベル */
+#intro-label{font-family:'Orbitron',monospace;font-size:13px;font-weight:700;letter-spacing:4px;color:#fff;margin-top:22px;animation:ibPulse 1.2s ease-in-out infinite;text-shadow:0 0 12px rgba(180,140,255,0.9);}
+#intro-sublabel{font-family:'Exo 2',sans-serif;font-size:11px;color:rgba(255,255,255,0.4);margin-top:6px;letter-spacing:1px;}
+@keyframes ibGlowPulse{0%,100%{transform:scale(1);opacity:0.7;}50%{transform:scale(1.08);opacity:1;}}
+@keyframes ibPulse{0%,100%{opacity:0.5;transform:scale(1);}50%{opacity:1;transform:scale(1.04);}}
+@keyframes ibFloat{0%,100%{transform:translateY(0);}40%{transform:translateY(-12px);}70%{transform:translateY(-7px);}}
+@keyframes ibReveal{0%{opacity:0;transform:scale(0.4);}60%{transform:scale(1.06);}100%{opacity:1;transform:scale(1);}}
+@keyframes ibPop{0%{transform:scale(1);opacity:1;}35%{transform:scale(1.4);opacity:0.7;}100%{transform:scale(0.04);opacity:0;}}
+.ib-reveal{animation:ibReveal 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards;}
+.ib-floating{animation:ibFloat 3s ease-in-out infinite;}
+.ib-popping{animation:ibPop 0.3s ease-out forwards!important;}
+</style>
+
+<div id="gw">
+  <div id="ms">
+    <div id="ms-title">BUBBLE POP</div>
+    <div id="ms-sub">モードを選んでスタート</div>
+    <div class="mcard sel" id="card-same">
+      <div class="mtag tsame">SAME COLOR</div>
+      <div class="mcard-t">同色連鎖モード</div>
+      <div class="mcard-d">同じ色を連続して壊すほど得点加速。20秒間で高スコアを狙え。バブルは時間切れで自動更新。全破壊1回使用可。</div>
+    </div>
+    <div class="mcard" id="card-diff">
+      <div class="mtag tdiff">DIFF COLOR</div>
+      <div class="mcard-t">異色連鎖モード</div>
+      <div class="mcard-d">同色2連続でゲームオーバー。2COLOR(過去5色)と3COLOR(直近3色)のボーナスを狙え。連鎖で加速。</div>
+    </div>
+    <button class="gbtn" id="btn-go">START</button>
+  </div>
+
+  <div id="ov" style="display:none;">
+    <div id="ov-title">RESULT</div>
+    <div id="ov-score">0</div>
+    <div id="ov-best-wrap"><div id="ov-best-label">best</div><div id="ov-best">0</div></div>
+    <div id="ov-new-best"></div>
+    <div id="ov-history"></div>
+    <div id="ov-sub"></div>
+    <button class="gbtn" id="btn-retry" style="margin-top:4px;font-size:12px;padding:10px 32px;">RETRY</button>
+    <button class="sbtn" id="btn-back">モード選択へ</button>
+    <button class="sbtn" id="btn-share">結果をコピー</button>
+    <div id="sc"></div>
+  </div>
+
+  <div id="hud">
+    <div class="hl"><div class="hl-label">best</div><div class="hl-best" id="bd">0</div></div>
+    <div id="trw">
+      <svg id="tsvg" width="52" height="52" viewBox="0 0 52 52">
+        <circle id="trbg" cx="26" cy="26" r="22" fill="none" stroke-width="3.5"/>
+        <circle id="tr" cx="26" cy="26" r="22" fill="none" stroke-width="3.5" stroke-dasharray="138.2" stroke-dashoffset="0"/>
+      </svg>
+      <div id="tt">20</div>
+    </div>
+    <div class="hl"><div class="hl-label">score</div><div class="hl-val" id="sd">0</div></div>
+  </div>
+
+  <div id="pb-wrap">
+    <div id="mbadge" class="mb-same">SAME</div>
+    <div id="pb">×1</div>
+    <div id="lives" style="display:none;">
+      <span class="life" id="life0">❤️</span>
+      <span class="life" id="life1">❤️</span>
+      <span class="life" id="life2">❤️</span>
+    </div>
+    <div id="speed-info"></div>
+  </div>
+
+  <div id="bonus-bar">
+    <div class="bchip" id="bc-duo">
+      <div class="bchip-label">2COLOR</div>
+      <div class="bchip-row"><div class="bchip-pts" id="bc-duo-pts">200pt</div><div class="bchip-count" id="bc-duo-ct">0/5</div></div>
+    </div>
+    <div class="bchip" id="bc-tri">
+      <div class="bchip-label">3COLOR</div>
+      <div class="bchip-row"><div class="bchip-pts" id="bc-tri-pts">300pt</div><div class="bchip-count" id="bc-tri-ct">0/5</div></div>
+    </div>
+  </div>
+
+  <div id="hist"></div>
+  <div id="ci">　</div>
+  <div id="grid"></div>
+  <div id="bbar"><button id="bnuke">NUKE (x1)</button></div>
+
+  <!-- スタート演出オーバーレイ -->
+  <div id="intro-overlay" style="display:none;">
+    <div id="intro-bubble-wrap">
+      <div class="ib-floating" id="ib-wrap-inner">
+        <div class="ib-glow"></div>
+        <div class="ib-body"></div>
+        <div class="ib-rim"></div>
+        <div class="ib-shine1"></div>
+        <div class="ib-shine2"></div>
+        <div class="ib-shine3"></div>
+      </div>
+    </div>
+    <div id="intro-label">TAP TO START</div>
+    <div id="intro-sublabel">バブルをタップしてスタート</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var COLORS=[
+    {name:'red',   solid:'#ff4455',body:'rgba(255,50,70,0.18)', rimSolid:'rgba(255,80,90,0.92)',glow:'rgba(255,50,70,0.55)'},
+    {name:'blue',  solid:'#22aaff',body:'rgba(30,150,255,0.18)',rimSolid:'rgba(60,170,255,0.92)',glow:'rgba(30,140,255,0.55)'},
+    {name:'yellow',solid:'#ffdd00',body:'rgba(255,210,0,0.18)', rimSolid:'rgba(255,225,30,0.92)',glow:'rgba(255,200,0,0.55)'},
+  ];
+  var MIX={
+    'red+blue':'rgba(160,50,230,0.18)','blue+red':'rgba(160,50,230,0.18)',
+    'red+yellow':'rgba(255,110,0,0.18)','yellow+red':'rgba(255,110,0,0.18)',
+    'blue+yellow':'rgba(0,200,90,0.18)','yellow+blue':'rgba(0,200,90,0.18)',
+  };
+  var CIRC_HUD=2*Math.PI*22, CIRC_B=2*Math.PI*46;
+  var cells=[],score=0;
+  var best={same:0,diff:0},scoreHistory={same:[],diff:[]};
+  var combo=0,timeLeft=20,phase=1;
+  var timerInt=null,running=false,lastColor=null,history=[];
+  var nukeUsed=false,gameMode='same',elapsedSec=0;
+  var lives=3; // 異色モード残基
+  var bubbleTimers=[],diffLoopInt=null,sameLoopInt=null;
+  // 同色モード: 初期6秒、60秒ごとに1秒短縮、最短2秒
+  var SAME_BASE=6000, SAME_MIN=2000, SAME_ACCEL=60;
+  var sameCurrentTime=SAME_BASE, sameElapsed=0;
+  // 異色モード: 初期20秒、90秒ごとに1秒短縮、最短6秒
+  var DIFF_BASE=20000, DIFF_MIN=6000, DIFF_ACCEL=90;
+  var currentBubbleTime=DIFF_BASE;
+
+  var CAP=5;
+  var duoCount=0,triCount=0;
+  var diffTimeBonus=0; // 異色モード: 20秒ごとに累積加算するボーナス量
+  function duoPts(n){return Math.min(n,CAP)*300;}
+  function triPts(n){return Math.min(n,CAP)*300;}
+
+  // 3COLORボーナス判定：colorLog（最新が先頭）に赤青黄が揃ったあと、
+  // さらに1色破壊（連鎖1）で発動。つまり赤青黄+任意1色の4色ウィンドウで判定。
+  // colorLogは最大5件保持。直近4件に3色すべて含まれ、かつ直近1件が「3色以外ではない」
+  // → 直近4件に赤青黄がすべて揃った瞬間に発動（4件目追加時）
+  function checkTriBonus(){
+    if(colorLog.length<4)return false;
+    var w=colorLog.slice(0,4); // 直近4色
+    return w.indexOf('red')>=0&&w.indexOf('blue')>=0&&w.indexOf('yellow')>=0;
+  }
+  var colorLog=[];
+
+  var CHAIN_PTS=[0,100,150,250,400,600,900];
+  function getChainPts(c){return CHAIN_PTS[Math.min(c,6)];}
+
+  var sd=document.getElementById('sd'),bd=document.getElementById('bd');
+  var tt=document.getElementById('tt'),tr=document.getElementById('tr');
+  var ci=document.getElementById('ci'),hist=document.getElementById('hist');
+  var ms=document.getElementById('ms'),ov=document.getElementById('ov');
+  var ovScore=document.getElementById('ov-score'),ovBest=document.getElementById('ov-best');
+  var ovNewBest=document.getElementById('ov-new-best'),ovHistory=document.getElementById('ov-history');
+  var ovSub=document.getElementById('ov-sub'),pb=document.getElementById('pb');
+  var mbadge=document.getElementById('mbadge'),bnuke=document.getElementById('bnuke');
+  var grid=document.getElementById('grid'),speedInfo=document.getElementById('speed-info');
+  var bonusBar=document.getElementById('bonus-bar');
+  var bcDuo=document.getElementById('bc-duo'),bcTri=document.getElementById('bc-tri');
+  var bcDuoPts=document.getElementById('bc-duo-pts'),bcTriPts=document.getElementById('bc-tri-pts');
+  var bcDuoCt=document.getElementById('bc-duo-ct'),bcTriCt=document.getElementById('bc-tri-ct');
+
+  function randC(){return COLORS[Math.floor(Math.random()*COLORS.length)];}
+  function getBody(f,bk){var k=f.name+'+'+bk.name;return MIX[k]||f.body;}
+  function applyStyle(o,f,bk){
+    o.querySelector('.bb').style.background=getBody(f,bk);
+    var r=o.querySelector('.br');
+    r.style.borderColor=f.rimSolid;
+    r.style.boxShadow='0 0 16px 4px '+f.glow+', inset 0 0 10px 2px '+f.glow;
+  }
+  function makeOuter(f,bk){
+    var o=document.createElement('div');o.className='bo';
+    var ns='http://www.w3.org/2000/svg';
+    var svg=document.createElementNS(ns,'svg');
+    svg.setAttribute('class','timer-ring-svg');svg.setAttribute('viewBox','0 0 100 100');
+    var bg=document.createElementNS(ns,'circle');
+    bg.setAttribute('cx','50');bg.setAttribute('cy','50');bg.setAttribute('r','46');
+    bg.setAttribute('fill','none');bg.setAttribute('stroke','rgba(255,255,255,0.12)');bg.setAttribute('stroke-width','3');
+    var fg=document.createElementNS(ns,'circle');
+    fg.setAttribute('cx','50');fg.setAttribute('cy','50');fg.setAttribute('r','46');
+    fg.setAttribute('fill','none');fg.setAttribute('stroke','rgba(255,255,255,0.92)');fg.setAttribute('stroke-width','5');
+    fg.setAttribute('stroke-linecap','round');
+    fg.setAttribute('stroke-dasharray',CIRC_B.toFixed(1));
+    fg.setAttribute('stroke-dashoffset','0');fg.setAttribute('transform','rotate(-90 50 50)');
+    fg.setAttribute('class','btr');
+    svg.appendChild(bg);svg.appendChild(fg);
+    o.innerHTML='<div class="bb"></div><div class="br"></div><div class="bs1"></div><div class="bs2"></div>';
+    o.appendChild(svg);applyStyle(o,f,bk);return o;
+  }
+  function setTimerRing(outer,progress){
+    var ring=outer.querySelector('.btr');if(!ring)return;
+    ring.setAttribute('stroke-dashoffset',(CIRC_B*(1-progress)).toFixed(2));
+    if(progress<0.25){ring.setAttribute('stroke-width','7');ring.setAttribute('stroke','rgba(255,255,255,1)');}
+    else{ring.setAttribute('stroke-width','5');ring.setAttribute('stroke','rgba(255,255,255,0.92)');}
+  }
+  function setBubbleScale(sw,progress){
+    sw.style.transform='scale('+(1+(1-progress)*0.28).toFixed(3)+')';
+  }
+
+  function calcBonus(colorName){
+    colorLog.unshift(colorName);
+    if(colorLog.length>5)colorLog.pop();
+    var bonusPts=0,bonusType=null;
+    // 2COLORボーナス：過去5色が2色のみ
+    if(colorLog.length>=5){
+      var s5={};for(var i=0;i<5;i++)s5[colorLog[i]]=1;
+      if(Object.keys(s5).length===2){
+        duoCount++;bonusPts+=duoPts(duoCount);bonusType='duo';
+      }
+    }
+    // 3COLORボーナス：直近4色に赤・青・黄がすべて含まれる（4色目追加時に発動）
+    if(checkTriBonus()){
+      triCount++;bonusPts+=triPts(triCount);bonusType=bonusType?'both':'tri';
+    }
+    updateBonusUI();
+    return {pts:bonusPts,type:bonusType};
+  }
+  function updateBonusUI(){
+    var dNext=duoPts(duoCount+1),tNext=triPts(triCount+1);
+    var dCap=duoCount>=CAP,tCap=triCount>=CAP;
+    bcDuoPts.textContent=(dCap?duoPts(CAP):dNext)+'pt';
+    bcTriPts.textContent=(tCap?triPts(CAP):tNext)+'pt';
+    bcDuoCt.textContent=duoCount+'/'+CAP;
+    bcTriCt.textContent=triCount+'/'+CAP;
+    bcDuo.className='bchip'+(dCap?' cap':duoCount>0?' lit':'');
+    bcTri.className='bchip'+(tCap?' cap':triCount>0?' lit':'');
+  }
+
+  function buildGrid(){
+    grid.innerHTML='';cells=[];bubbleTimers=[];
+    for(var i=0;i<9;i++){
+      var f=randC(),bk=randC();
+      var w=document.createElement('div');w.className='bw';
+      var sw=document.createElement('div');sw.className='b-scale-wrap';
+      var o=makeOuter(f,bk);
+      sw.appendChild(o);w.appendChild(sw);grid.appendChild(w);
+      cells.push({wrap:w,scaleWrap:sw,outer:o,front:f,back:bk,popping:false});
+      bubbleTimers.push(null);
+      (function(idx){
+        w.addEventListener('click',function(){popBubble(idx);});
+        w.addEventListener('touchstart',function(e){e.preventDefault();popBubble(idx);},{passive:false});
+      })(i);
+    }
+  }
+
+  function getBubbleDuration(){
+    return gameMode==='same'?sameCurrentTime:currentBubbleTime;
+  }
+
+  function startOneBubbleTimer(idx){
+    if(bubbleTimers[idx])clearInterval(bubbleTimers[idx]);
+    var cell=cells[idx];if(!cell||cell.popping)return;
+    var duration=getBubbleDuration(),start=Date.now();
+    setTimerRing(cell.outer,1);setBubbleScale(cell.scaleWrap,1);
+    bubbleTimers[idx]=(function(i,dur){
+      return setInterval(function(){
+        if(!running){clearInterval(bubbleTimers[i]);return;}
+        var progress=Math.max(0,1-(Date.now()-start)/dur);
+        var c=cells[i];if(!c||c.popping)return;
+        setTimerRing(c.outer,progress);setBubbleScale(c.scaleWrap,progress);
+        if(progress<0.25)c.outer.classList.add('shaking');
+        else c.outer.classList.remove('shaking');
+        if(progress<=0){
+          clearInterval(bubbleTimers[i]);
+          if(running&&!c.popping){
+            if(gameMode==='same'){
+              autoRefresh(i);
+            } else {
+              burstAndGameOver(i);
+            }
           }
-        ]
-      }</script><script nonce="">!function(){try{performance.mark?.("rq_cache:preload_start");const e="keyval-store",o="keyval",r="react-query-cache",t=new Promise(t=>{if(!window.indexedDB)return void t(void 0);const c=indexedDB.open(e);c.onupgradeneeded=()=>{c.transaction?.abort()},c.onerror=()=>t(void 0),c.onsuccess=()=>{const a=c.result;if(!a.objectStoreNames.contains(o))return a.close(),indexedDB.deleteDatabase(e),void t(void 0);try{const e=a.transaction(o,"readonly").objectStore(o).get(r);e.onerror=()=>{a.close(),t(void 0)},e.onsuccess=()=>{a.close(),window.__PRELOADED_IDB_CACHE_RESULT__=e.result,t(e.result)}}catch{a.close(),t(void 0)}}});window.__PRELOADED_IDB_CACHE__=t,performance.measure?.("rq_cache:preload_exec",{start:"rq_cache:preload_start"})}catch{}}()</script><script type="module" crossorigin="" src="./bubble pop_files/index-CkTZiI-0.js.ダウンロード" nonce=""></script><link rel="modulepreload" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-CdYtgn4m.js"><link rel="modulepreload" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/tree-sitter-jrPhcVCG.js"><link rel="stylesheet" crossorigin="" href="./bubble pop_files/c6a992d55-1fO2Qm3h.css"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c50152c30-DHqKsDm4.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c806a392a-4i-GP6EZ.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c50152c30-C-TJpgXJ.js"><meta name="theme-color" content="hsl(30,3.3%,11.8%)"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cf0bcab69-DiGurwA9.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cce790aee-DkD-ZIDn.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c1fe5bf92-BHjsxuyX.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c7a51f85b-BV28yWph.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cde7c3a92-DesvHd58.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c6a992d55-DckjyDD_.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c6a992d55-CnEMA_0c.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cc188f2db-CTGFxau4.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c6a992d55-tncu0oPC.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cf4f70727-Yub1EZ8F.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cce6219ff-DNiS28QU.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c1af03898-DZSPtzTm.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c81ee128e-BiGcczZX.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ca43e0c47-WqxIfRj6.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c1a5a151a-DbU1qMWQ.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c4a0394fd-CRzObvgB.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ce43cd836-nNpYvaaf.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ced1eadef-yDqPvm9A.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c29d86d70-Dn_Qhl_m.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cca9b2a83-DCXeSH5_.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c93abf261-Qfeu6aOb.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cfb7b725b-BmfW9TP4.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cb5da4c54-Dd-XD426.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c2d75c27a-D62nlZF6.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c184b2ab0-ByJ7Bsnd.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c38eb0c13-CafgIT_K.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c0662a73e-o8F5HHdE.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c23d1051c-CPAN5lj3.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c0af56d39-CO7oxcXi.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c241f73d9-XA_BhgGx.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c62343a9d-C1o-bYHr.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c3a41fcbb-B1HYVnaC.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c9560eacf-Dz1fxndw.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ce73de7b0-BdID7PCi.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c5c66ffa5-DK9QsLPx.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c71ba149d-BCBugxWx.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c06ec2d59-cfVimLiM.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c5ac719b0-Cuvc90Td.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c97e7c9a7-BLXyP8Ph.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c8f5e99bb-CR0NynLw.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c284c2e59-nWtBlYXn.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c73ad54c2-BllZCcQr.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cad37eea7-CtDa3YiQ.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c56e0b5dd-_vt5n-W0.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c71860c77-DiPXYwgm.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cfb955a00-DK06K4Xl.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cb53cddab-Br6XIvZS.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ce99eb202-6Dg1fa1F.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c67494563-SY2OYu2C.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cee353eee-Di3ExHsx.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c9a3208fa-L1QBGM9p.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c74f05e4a-DsyKtBwd.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c1c9ea8f5-DDHeGskg.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c2ff7aa9e-CaSglzCK.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c6a992d55-B4ICAPYF.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c35e966ba-B21sxGU6.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c6a992d55-B8IcEu4P.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c6a992d55-CfxUmBIB.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c6a992d55-bsVAaBS1.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c6a992d55-DLR_9yvZ.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cf1a02a1a-dlK9sQnC.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c1b9abf13-B4ZiUFNs.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c71dee58b-C9aVJuKg.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c1a6dc555-CkkdNT-n.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c2dcff8c0-5yJVDRbA.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c6b9e36fd-3AcVYw1V.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c836d6dec-B1JsbVXy.js"><link rel="stylesheet" crossorigin="" href="./bubble pop_files/c836d6dec-BqPxldXl.css"></head><body class="bg-bg-100 text-text-100 font-ui min-h-screen" style="pointer-events: auto;"><div id="root"><div class="root"><div class="grid w-full overflow-hidden" style="height: calc(100vh - var(--app-install-banner-height, 0px) - var(--dev-dashboard-height, 0px)); grid-template-rows: 0px 1fr; transition: grid-template-rows 0.15s ease-out;"><div></div><div class="flex min-h-0 w-full overflow-x-clip overflow-y-auto relative"><div class="pointer-events-none absolute inset-0 bg-bg-100 [background-image:linear-gradient(to_right,hsl(var(--bg-200))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--bg-200))_1px,transparent_1px)] [background-size:32px_32px]" aria-hidden="true" style="clip-path: circle(150% at 50% 50%); opacity: 0;"></div><div class="shrink-0" style="overflow: hidden; width: auto; opacity: 1;"><div class="fixed lg:sticky z-sidebar" style="width: 18rem;"><nav class="flex flex-col px-0 fixed left-0 border-r-0.5 h-screen lg:bg-gradient-to-t from-bg-200/5 to-bg-200/30 shadow-lg lg:shadow-none border-border-300 bg-bg-100 transition-[background-color,border-color,box-shadow] duration-[35ms]" aria-label="サイドバー" style="width: 18rem; top: 0px; padding-top: var(--app-install-banner-height, 0px); padding-bottom: var(--dev-dashboard-height, 0px);"><div class="relative flex w-full items-center p-2 pointer-events-auto pt-2"><div class="flex items-center gap-1.5 pl-2 h-8 overflow-clip [overflow-clip-margin:4px] transition-opacity duration-150 opacity-100"><a href="https://claude.ai/new" class="flex flex-col justify-start items-top" aria-label="ホーム" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 16" class="h-4 flex-shrink-0 text-text-100" height="16" fill="currentColor" aria-label="Claude"><path d="M7.98 15.73C6.50667 15.73 5.17667 15.4367 3.99 14.85C2.81 14.2567 1.88 13.4167 1.2 12.33C0.526669 11.2367 0.190002 9.96334 0.190002 8.51001C0.190002 7.01001 0.526669 5.67334 1.2 4.50001C1.87334 3.32668 2.8 2.41668 3.98 1.77001C5.16667 1.11668 6.49334 0.790009 7.96 0.790009C8.88667 0.790009 9.81667 0.896676 10.75 1.11001C11.69 1.32334 12.5033 1.64001 13.19 2.06001V5.36001H12.29C12.05 4.22668 11.5867 3.36334 10.9 2.77001C10.2133 2.17668 9.24 1.88001 7.98 1.88001C6.85334 1.88001 5.91334 2.15334 5.16 2.70001C4.40667 3.24001 3.84667 3.98334 3.48 4.93001C3.12 5.87001 2.94 6.94668 2.94 8.16001C2.94 9.37334 3.14667 10.4733 3.56 11.46C3.97334 12.44 4.57667 13.2167 5.37 13.79C6.16334 14.3567 7.11 14.64 8.21 14.64C8.97667 14.64 9.63667 14.4733 10.19 14.14C10.75 13.8 11.2167 13.3533 11.59 12.8C11.97 12.2467 12.3367 11.5667 12.69 10.76H13.63L12.99 14.43C12.35 14.8567 11.5733 15.18 10.66 15.4C9.75334 15.62 8.86 15.73 7.98 15.73ZM15.15 14.63C15.4833 14.5833 15.7433 14.53 15.93 14.47C16.1167 14.41 16.2633 14.3167 16.37 14.19C16.4767 14.0567 16.53 13.8733 16.53 13.64V2.96001L15.15 2.31001V1.65001L18.12 0.26001H18.91V13.64C18.91 13.8733 18.9633 14.0567 19.07 14.19C19.1767 14.3167 19.3233 14.41 19.51 14.47C19.6967 14.53 19.96 14.5833 20.3 14.63V15.5H15.15V14.63ZM24.44 15.73C23.8867 15.73 23.39 15.6167 22.95 15.39C22.51 15.1567 22.1667 14.8367 21.92 14.43C21.68 14.0233 21.56 13.5567 21.56 13.03C21.56 12.2633 21.7967 11.6233 22.27 11.11C22.75 10.5967 23.47 10.2033 24.43 9.93001L27.87 8.96001V7.56001C27.87 6.85334 27.7033 6.31668 27.37 5.95001C27.0433 5.58334 26.5633 5.40001 25.93 5.40001C25.37 5.40001 24.93 5.57668 24.61 5.93001C24.2967 6.27668 24.14 6.75668 24.14 7.37001V8.35001H22.47C22.2833 8.23001 22.1367 8.06334 22.03 7.85001C21.93 7.63668 21.88 7.40334 21.88 7.15001C21.88 6.67668 22.06 6.24001 22.42 5.84001C22.78 5.43334 23.2633 5.11334 23.87 4.88001C24.4833 4.64668 25.16 4.53001 25.9 4.53001C26.8133 4.53001 27.5933 4.67334 28.24 4.96001C28.8933 5.24668 29.39 5.66668 29.73 6.22001C30.0767 6.77334 30.25 7.43668 30.25 8.21001V13.5C30.25 13.7333 30.29 13.9133 30.37 14.04C30.45 14.1667 30.5867 14.2667 30.78 14.34C30.98 14.4133 31.2633 14.4767 31.63 14.53V15.39C31.0967 15.5967 30.5633 15.7 30.03 15.7C29.4367 15.7 28.9567 15.56 28.59 15.28C28.23 15 28.0067 14.6 27.92 14.08C27.44 14.62 26.9067 15.03 26.32 15.31C25.7333 15.59 25.1067 15.73 24.44 15.73ZM25.62 14.13C26.0067 14.13 26.3967 14.0433 26.79 13.87C27.1833 13.69 27.5433 13.4433 27.87 13.13V9.87001L25.43 10.61C24.9233 10.7567 24.5433 10.99 24.29 11.31C24.0433 11.6233 23.92 12.0267 23.92 12.52C23.92 12.8267 23.9933 13.1033 24.14 13.35C24.2867 13.59 24.49 13.78 24.75 13.92C25.01 14.06 25.3 14.13 25.62 14.13ZM36.56 15.73C35.48 15.73 34.68 15.4467 34.16 14.88C33.6467 14.3133 33.39 13.53 33.39 12.53V6.91001L32.01 6.37001V5.70001L34.98 4.53001H35.77V12.12C35.77 12.7533 35.9233 13.2233 36.23 13.53C36.5433 13.8367 37.0133 13.99 37.64 13.99C38.0533 13.99 38.4833 13.8967 38.93 13.71C39.3833 13.5167 39.8 13.27 40.18 12.97V6.91001L38.8 6.37001V5.70001L41.77 4.53001H42.56V12.91C42.56 13.17 42.6133 13.37 42.72 13.51C42.8333 13.65 42.9833 13.7533 43.17 13.82C43.3567 13.88 43.6167 13.9333 43.95 13.98V14.84L40.97 15.69H40.18V13.96C39.6667 14.4933 39.0867 14.9233 38.44 15.25C37.8 15.57 37.1733 15.73 36.56 15.73ZM49.61 15.73C48.7367 15.73 47.9567 15.51 47.27 15.07C46.5833 14.6233 46.0467 14.02 45.66 13.26C45.28 12.5 45.09 11.66 45.09 10.74C45.09 9.56668 45.3167 8.51001 45.77 7.57001C46.2233 6.63001 46.8733 5.89001 47.72 5.35001C48.5733 4.80334 49.5767 4.53001 50.73 4.53001C51.0767 4.53001 51.43 4.56668 51.79 4.64001C52.15 4.70668 52.4967 4.81001 52.83 4.95001V2.96001L51.45 2.31001V1.65001L54.42 0.26001H55.21V12.91C55.21 13.17 55.2633 13.37 55.37 13.51C55.4833 13.65 55.6333 13.7533 55.82 13.82C56.0067 13.88 56.2667 13.9333 56.6 13.98V14.84L53.62 15.69H52.83V14.39C52.3833 14.8167 51.8867 15.1467 51.34 15.38C50.7933 15.6133 50.2167 15.73 49.61 15.73ZM50.6 14.12C50.9867 14.12 51.3733 14.0467 51.76 13.9C52.1467 13.7467 52.5033 13.5367 52.83 13.27V6.38001C52.2567 5.92001 51.6167 5.69001 50.91 5.69001C50.1767 5.69001 49.5567 5.89001 49.05 6.29001C48.55 6.68334 48.1767 7.21334 47.93 7.88001C47.69 8.54668 47.57 9.28334 47.57 10.09C47.57 10.8567 47.6767 11.5433 47.89 12.15C48.11 12.7567 48.4467 13.2367 48.9 13.59C49.3533 13.9433 49.92 14.12 50.6 14.12ZM62.93 15.73C61.9433 15.73 61.0533 15.4967 60.26 15.03C59.4733 14.5567 58.8567 13.9033 58.41 13.07C57.9633 12.2367 57.74 11.3 57.74 10.26C57.74 9.18001 57.9667 8.20334 58.42 7.33001C58.88 6.45668 59.51 5.77334 60.31 5.28001C61.1167 4.78001 62.0167 4.53001 63.01 4.53001C63.77 4.53001 64.4667 4.68668 65.1 5.00001C65.7333 5.31334 66.2567 5.76001 66.67 6.34001C67.09 6.92001 67.37 7.59001 67.51 8.35001L60.14 10.66C60.3333 11.62 60.7267 12.38 61.32 12.94C61.92 13.4933 62.67 13.77 63.57 13.77C64.31 13.77 64.9767 13.5733 65.57 13.18C66.17 12.78 66.7 12.18 67.16 11.38L67.93 11.63C67.7633 12.4433 67.44 13.16 66.96 13.78C66.4867 14.4 65.9 14.88 65.2 15.22C64.5067 15.56 63.75 15.73 62.93 15.73ZM64.95 8.03001C64.8567 7.55668 64.6933 7.14001 64.46 6.78001C64.2267 6.42001 63.94 6.14001 63.6 5.94001C63.2667 5.74001 62.9033 5.64001 62.51 5.64001C62.01 5.64001 61.57 5.79334 61.19 6.10001C60.8167 6.40001 60.5267 6.83001 60.32 7.39001C60.1133 7.95001 60.01 8.60001 60.01 9.34001C60.01 9.46668 60.0133 9.56334 60.02 9.63001L64.95 8.03001Z"></path></svg></a></div><div class="absolute right-2 top-2"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md group _fill_1abo4_9 _ghost_1abo4_96" type="button" data-testid="pin-sidebar-toggle" aria-label="サイドバーを閉じる" aria-pressed="true" data-state="closed"><div class="relative size-4 flex items-center justify-center"><div class="transition text-text-400 group-hover:text-text-100" style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="transition text-text-400 group-hover:text-text-100" aria-hidden="true" style="flex-shrink: 0;"><path d="M16.5 4A1.5 1.5 0 0 1 18 5.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4zM7 15h9.5a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5H7zM3.5 5a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5H6V5z"></path></svg></div></div></button></div></div><div class="flex flex-col flex-grow align-center overflow-hidden min-h-0" aria-hidden="false"><div class="flex flex-col gap-px pt-2"><div class="px-2"><div class="relative group" data-state="closed"><a href="https://claude.ai/new" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" aria-label="新規チャット" data-dd-action-name="sidebar-new-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><div class="flex items-center justify-center text-text-100"><div class="flex items-center justify-center rounded-full transition-all ease-in-out group-hover:-rotate-3 group-hover:scale-110 group-active:rotate-6 group-active:scale-[0.98]"><div class="flex items-center justify-center rounded-full size-[1.4rem] -mx-[0.2rem] bg-text-500/15 active:bg-text-200 group-hover:bg-text-500/25"><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="text-text-300 group-hover:text-text-000" aria-hidden="true" style="flex-shrink: 0;"><path d="M10 3a.75.75 0 0 1 .75.75v5.5h5.5a.75.75 0 0 1 .077 1.496l-.077.004h-5.5v5.5a.75.75 0 0 1-1.5 0v-5.5h-5.5a.75.75 0 0 1 0-1.5h5.5v-5.5A.75.75 0 0 1 10 3"></path></svg></div></div></div><span class="truncate text-sm whitespace-nowrap flex-1"><div class="opacity-100 transition-opacity ease-out duration-150">新規チャット</div></span><span class="flex items-center flex-shrink-0 -mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-75"><span class="text-text-500 text-xs px-0.5">Ctrl+⇧+O</span></span></div></a></div></div><div class="px-2"><div class="relative group" data-state="closed"><a href="https://claude.ai/projects#" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" aria-label="検索" data-dd-action-name="sidebar-nav-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><div class="flex items-center justify-center text-text-100"><div style="width: 16px; height: 16px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M8.5 2a6.5 6.5 0 0 1 4.935 10.728l4.419 4.419.064.078a.5.5 0 0 1-.693.693l-.079-.064-4.419-4.42A6.5 6.5 0 1 1 8.5 2m0 1a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11"></path></svg></div></div><span class="truncate text-sm whitespace-nowrap flex-1"><div class="opacity-100 transition-opacity ease-out duration-150">検索</div></span><span class="flex items-center flex-shrink-0 -mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-75"><span class="text-text-500 text-xs px-0.5">Ctrl+K</span></span></div></a></div><div><div class="relative group" data-state="closed"><a href="https://claude.ai/customize" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" aria-label="カスタマイズ" data-dd-action-name="sidebar-nav-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><div class="flex items-center justify-center text-text-100"><div class="flex items-center justify-center transition-all ease-in-out group-hover:-rotate-3 group-hover:scale-110 group-active:rotate-6 group-active:scale-[0.98]"><div style="width: 16px; height: 16px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M12.5 3A1.5 1.5 0 0 1 14 4.5V6h.5A3.5 3.5 0 0 1 18 9.5v6a1.5 1.5 0 0 1-1.5 1.5h-13a1.5 1.5 0 0 1-1.492-1.347L2 15.5v-6A3.5 3.5 0 0 1 5.5 6H6V4.5A1.5 1.5 0 0 1 7.5 3zM3 15.5l.01.1a.5.5 0 0 0 .49.4h13a.5.5 0 0 0 .5-.5V12h-4v.5a.5.5 0 0 1-1 0V12H8v.5a.5.5 0 0 1-1 0V12H3zM5.5 7A2.5 2.5 0 0 0 3 9.5V11h4v-.5a.5.5 0 0 1 1 0v.5h4v-.5a.5.5 0 0 1 1 0v.5h4V9.5A2.5 2.5 0 0 0 14.5 7zm2-3a.5.5 0 0 0-.5.5V6h6V4.5a.5.5 0 0 0-.5-.5z"></path></svg></div></div></div><span class="truncate text-sm whitespace-nowrap flex-1"><div class="opacity-100 transition-opacity ease-out duration-150">カスタマイズ</div></span></div></a></div></div></div></div><div class="flex flex-grow flex-col overflow-x-hidden relative transition-[border-color] !outline-none overflow-y-auto border-t-0.5 border-transparent" tabindex="-1"><div class="flex flex-col px-2 pt-4 gap-px"><div class="relative group" data-state="closed"><a href="https://claude.ai/recents" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" aria-label="チャット" data-dd-action-name="sidebar-nav-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><div class="flex items-center justify-center text-text-100"><div class="group" style="width: 16px; height: 16px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="group" aria-hidden="true" style="flex-shrink: 0;"><path class="group-hover:-translate-x-[0.5px] transition group-active:translate-x-0" d="M8.99962 2C12.3133 2 14.9996 4.68629 14.9996 8C14.9996 11.3137 12.3133 14 8.99962 14H2.49962C2.30105 13.9998 2.12113 13.8821 2.04161 13.7002C1.96224 13.5181 1.99835 13.3058 2.1334 13.1602L3.93516 11.2178C3.34317 10.2878 2.99962 9.18343 2.99962 8C2.99962 4.68643 5.68609 2.00022 8.99962 2ZM8.99962 3C6.23838 3.00022 3.99961 5.23871 3.99961 8C3.99961 9.11212 4.36265 10.1386 4.97618 10.9688C5.11884 11.1621 5.1035 11.4293 4.94004 11.6055L3.64512 13H8.99962C11.761 13 13.9996 10.7614 13.9996 8C13.9996 5.23858 11.761 3 8.99962 3Z"></path><path class="group-hover:translate-x-[0.5px] transition group-active:translate-x-0" d="M16.5445 9.72754C16.4182 9.53266 16.1678 9.44648 15.943 9.53418C15.7183 9.62215 15.5932 9.85502 15.6324 10.084L15.7369 10.3955C15.9073 10.8986 16.0006 11.438 16.0006 12C16.0006 13.1123 15.6376 14.1386 15.024 14.9687C14.8811 15.1621 14.8956 15.4302 15.0592 15.6064L16.3531 17H11.0006C9.54519 17 8.23527 16.3782 7.32091 15.3848L7.07091 15.1103C6.88996 14.9645 6.62535 14.9606 6.43907 15.1143C6.25267 15.2682 6.20668 15.529 6.31603 15.7344L6.58458 16.0625C7.68048 17.253 9.25377 18 11.0006 18H17.5006C17.6991 17.9998 17.8791 17.8822 17.9586 17.7002C18.038 17.5181 18.0018 17.3058 17.8668 17.1602L16.0631 15.2178C16.6554 14.2876 17.0006 13.1837 17.0006 12C17.0006 11.3271 16.8891 10.6792 16.6842 10.0742L16.5445 9.72754Z"></path></svg></div></div><span class="truncate text-sm whitespace-nowrap flex-1"><div class="opacity-100 transition-opacity ease-out duration-150"><span>チャット</span></div></span></div></a></div><div class="relative group" data-state="closed"><a href="https://claude.ai/projects" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden !bg-bg-300 active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" aria-label="プロジェクト" data-dd-action-name="sidebar-nav-item" aria-current="page"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><div class="flex items-center justify-center text-text-100"><div class="group" style="width: 16px; height: 16px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="group" aria-hidden="true" style="flex-shrink: 0;"><path class="group-hover:scale-95 origin-center" d="M15.8198 7C16.6885 7.00025 17.3624 7.73158 17.3178 8.57617L17.2993 8.74707L16.1332 15.7471C16.0126 16.4699 15.3865 16.9996 14.6538 17H5.34711C4.6142 16.9998 3.98833 16.47 3.86762 15.7471L2.7016 8.74707C2.54922 7.83277 3.25418 7 4.18109 7H15.8198ZM4.18109 8C3.87216 8 3.63722 8.27731 3.68793 8.58203L4.85394 15.582C4.89413 15.8229 5.10291 15.9998 5.34711 16H14.6538C14.8978 15.9996 15.1068 15.8228 15.1469 15.582L16.3129 8.58203L16.3188 8.46973C16.3036 8.21259 16.0899 8.00023 15.8198 8H4.18109Z"></path><path class="group-hover:-translate-y-[1.4px] group-hover:translate-x-[0.5px] group-hover:rotate-3 transition group-active:translate-y-0" d="M16.0004 5.5C16.0004 5.224 15.7764 5.00024 15.5004 5H4.50043C4.22428 5 4.00043 5.22386 4.00043 5.5C4.00043 5.77614 4.22428 6 4.50043 6H15.5004C15.7764 5.99976 16.0004 5.776 16.0004 5.5Z"></path><path class="group-hover:-translate-y-[2.8px] group-hover:translate-x-px group-hover:rotate-6 transition group-active:translate-y-0" d="M14.5004 3.5C14.5004 3.224 14.2764 3.00024 14.0004 3H6.00043C5.72428 3 5.50043 3.22386 5.50043 3.5C5.50043 3.77614 5.72428 4 6.00043 4H14.0004C14.2764 3.99976 14.5004 3.776 14.5004 3.5Z"></path></svg></div></div><span class="truncate text-sm whitespace-nowrap flex-1 [mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)]"><div class="opacity-100 transition-opacity ease-out duration-150"><span>プロジェクト</span></div></span></div></a></div><div><div class="relative group" data-state="closed"><a href="https://claude.ai/artifacts" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" aria-label="アーティファクト" data-dd-action-name="sidebar-nav-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><div class="flex items-center justify-center text-text-100"><div class="group backface-hidden" style="width: 16px; height: 16px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="group backface-hidden" aria-hidden="true" style="flex-shrink: 0;"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.35352 3.1464L9.35352 6.14642C9.43935 6.25103 9.5 6.36003 9.5 6.50091C9.4998 6.6332 9.44704 6.75988 9.35352 6.85346L6.35352 9.85347C6.14584 10.0609 5.85611 10.0243 5.64648 9.85347L2.64648 6.85346C2.55296 6.75988 2.5002 6.6332 2.5 6.50091C2.5 6.36841 2.55285 6.24017 2.64648 6.14642L5.64648 3.1464C5.8552 2.97421 6.14635 2.93936 6.35352 3.1464ZM6 8.79194L3.70703 6.49994L6 4.20696L8.29297 6.49994L6 8.79194Z"></path><path class="group-hover:-rotate-90 transition-transform duration-200 ease-snappy-out" d="M16.8984 3.7509C16.9875 3.90632 16.986 4.09826 16.8955 4.25286L15.5791 6.49994L16.8955 8.74702C16.986 8.90159 16.9874 9.09354 16.8984 9.24898C16.8093 9.40436 16.643 9.49996 16.4638 9.49996H11.5C11.3198 9.49996 11.1532 9.4028 11.0644 9.24605C10.976 9.08949 10.9789 8.89736 11.0713 8.74312L12.417 6.49994L11.0713 4.25676C10.9789 4.1025 10.976 3.91037 11.0644 3.75383C11.1532 3.59717 11.3199 3.49992 11.5 3.49992H16.4638C16.6429 3.51309 16.8055 3.58909 16.8984 3.7509ZM13.4287 6.2431C13.5152 6.4107 13.5166 6.58638 13.4287 6.75678L12.3828 8.49995H15.5918L14.5683 6.75287C14.477 6.59683 14.477 6.40303 14.5683 6.24701L15.5918 4.49993H12.3828L13.4287 6.2431Z" style="transform-origin: 14px 6.5px;"></path><path class="group-hover:rotate-[120deg] transition-transform duration-200 ease-snappy-out" fill-rule="evenodd" clip-rule="evenodd" d="M7.25293 10.9668C7.40708 10.8793 7.59647 10.8801 7.75 10.9687C7.90356 11.0574 7.99869 11.2211 8 11.3984L8.01074 12.8388L9.30762 13.6054C9.42811 13.6994 9.49994 13.8448 9.5 14C9.5 14.1773 9.40587 14.3418 9.25293 14.4316L8.01074 15.1601L7.99512 16.667C7.97406 16.8184 7.88446 16.9536 7.75 17.0312C7.59642 17.1199 7.40713 17.1207 7.25293 17.0332L6 16.3203L4.74707 17.0332C4.59287 17.1207 4.40358 17.1199 4.25 17.0312C4.09643 16.9425 4.00124 16.7789 4 16.6015L3.99023 15.1601L2.74707 14.4316C2.59413 14.3418 2.5 14.1773 2.5 14C2.50006 13.8448 2.57188 13.6994 2.69238 13.6054L3.99023 12.8388L4 11.3984C4.00131 11.2211 4.09644 11.0574 4.25 10.9687C4.40353 10.8801 4.59292 10.8793 4.74707 10.9668L6 11.6787L7.25293 10.9668ZM4.99512 12.2568L5.75293 12.6884C5.90608 12.7754 6.09392 12.7754 6.24707 12.6884L7.00586 12.2568L7.01172 13.1308C7.01308 13.3068 7.10706 13.4695 7.25879 13.5586L8.01172 14L7.25879 14.4414C7.10706 14.5304 7.01315 14.6932 7.01172 14.8691L7.00586 15.7422L6.24707 15.3115C6.09397 15.2246 5.90603 15.2246 5.75293 15.3115L4.99512 15.7422L4.98828 14.8691C4.98703 14.7152 4.91459 14.5716 4.79492 14.4785L3.98926 14L4.74121 13.5586C4.87421 13.4805 4.96267 13.3457 4.9834 13.1953L4.99512 12.2568Z" style="transform-origin: 6px 14px;"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14 11C15.6568 11 16.9999 12.3432 17 14C17 15.6568 15.6569 17 14 17C12.3431 17 11 15.6568 11 14C11.0001 12.3432 12.3432 11 14 11ZM12 14C12.0001 12.8955 12.8955 12 14 12C15.1045 12 15.9999 12.8955 16 14C16 15.1045 15.1046 16 14 16C12.8954 16 12 15.1045 12 14Z"></path></svg></div></div><span class="truncate text-sm whitespace-nowrap flex-1"><div class="opacity-100 transition-opacity ease-out duration-150 flex flex-col"><div class="flex items-center gap-2">アーティファクト</div></div></span></div></a></div></div><div class="relative group" data-state="closed"><a href="https://claude.ai/code" target="_blank" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" aria-label="コード" data-dd-action-name="sidebar-nav-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><div class="flex items-center justify-center text-text-100"><div class="group" style="width: 16px; height: 16px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="group" aria-hidden="true" style="flex-shrink: 0;"><path class="transition" d="M11.6318 4.01757C11.898 4.09032 12.055 4.36555 11.9824 4.63183L8.98242 15.6318C8.90966 15.8981 8.63449 16.0551 8.36816 15.9824C8.10193 15.9097 7.94495 15.6345 8.01758 15.3682L11.0176 4.36816C11.0904 4.102 11.3656 3.94497 11.6318 4.01757Z"></path><path class="group-hover:translate-x-[1px] transition" d="M13.124 6.17089C13.3059 5.96325 13.6213 5.9423 13.8291 6.12402L17.8291 9.62402L17.9014 9.70215C17.9647 9.78754 18 9.89182 18 10C18 10.1441 17.9375 10.281 17.8291 10.376L13.8291 13.876L13.7471 13.9346C13.5449 14.0498 13.2833 14.011 13.124 13.8291C12.9649 13.6472 12.9606 13.3824 13.1016 13.1973L13.1709 13.124L16.7412 10L13.1709 6.87597C12.9632 6.69411 12.9422 6.37866 13.124 6.17089Z"></path><path class="group-hover:-translate-x-[1px] transition" d="M6.25293 6.06542C6.45509 5.95025 6.71675 5.98908 6.87598 6.17089C7.03513 6.35279 7.03933 6.6176 6.89844 6.80273L6.8291 6.87597L3.25879 10L6.8291 13.124C7.03682 13.3059 7.05771 13.6213 6.87598 13.8291C6.69413 14.0369 6.37869 14.0578 6.1709 13.876L2.1709 10.376L2.09863 10.2979C2.03528 10.2124 2 10.1082 2 10C2.00005 9.85591 2.06247 9.71893 2.1709 9.62402L6.1709 6.12402L6.25293 6.06542Z"></path></svg></div></div><span class="truncate text-sm whitespace-nowrap flex-1"><div><div class="opacity-100 transition-opacity ease-out duration-150"><span>コード</span></div><div class="absolute -right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-50 transition duration-75" style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="absolute -right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-50 transition duration-75" aria-hidden="true" style="flex-shrink: 0;"><path d="M14.5 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0V6.707l-8.147 8.147a.5.5 0 0 1-.707-.707L13.293 6H7.5a.5.5 0 0 1 0-1z"></path></svg></div></div></span></div></a></div></div><div class="flex-1 relative"><div class="opacity-100 transition-opacity ease-out duration-150" aria-hidden="false"><div class="px-2 mt-4"><div class="flex flex-col flex-grow"><div class="flex items-center justify-between"><h2 aria-hidden="false" role="button" tabindex="0" aria-expanded="true" class="text-text-500 pb-2 mt-1 text-xs select-none pl-2 pr-2 group/header cursor-pointer flex items-center justify-between gap-2">最近の項目<span class="text-text-400 opacity-0 group-hover/header:opacity-75 transition-opacity">非表示</span></h2></div><ul class="flex flex-col gap-px"><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/8c9cb3d1-a207-405b-bc77-e70188ec26fa" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">Amazon商品ページの販促文言パターン作成</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="Amazon商品ページの販促文言パターン作成のその他のオプション" id="radix-_r_i_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/ff29574f-01f5-4467-9b66-1899678805ad" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">ゲーム性の類似ゲームと収益予測</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="ゲーム性の類似ゲームと収益予測のその他のオプション" id="radix-_r_m_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/af22b322-5565-48a5-82f0-d935776290bf" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">ゲームの収益化方法</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="ゲームの収益化方法のその他のオプション" id="radix-_r_q_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/ab9df21a-b839-43e7-a29c-311db8d4ed08" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">バブルポップゲーム開発引き継ぎ</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="バブルポップゲーム開発引き継ぎのその他のオプション" id="radix-_r_u_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/092b06bb-022d-4ce5-948a-5612ff0489f2" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">運要素とリトライ性を重視したゲームリサーチ</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="運要素とリトライ性を重視したゲームリサーチのその他のオプション" id="radix-_r_12_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/05be5972-aa62-4e17-9517-bd92f18b4716" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">複式簿記の記入方法と注意点</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="複式簿記の記入方法と注意点のその他のオプション" id="radix-_r_16_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/a84a9c6a-58e1-4ca2-830d-c189e7763b13" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">確定申告と古物商管理の一元化ツール</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="確定申告と古物商管理の一元化ツールのその他のオプション" id="radix-_r_1a_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/f43f696c-d2a6-42bf-825c-7c83f9a77e95" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">Studio 2.0</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="Studio 2.0のその他のオプション" id="radix-_r_1e_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/cfce1df3-6b77-41e5-ad3a-7122dfb7b75f" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">ショッピー出品用の透かし作成</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="ショッピー出品用の透かし作成のその他のオプション" id="radix-_r_1i_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/9ef04194-0f85-41b8-a511-214290b21016" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">ショッピーのチャット機能利用規約確認</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="ショッピーのチャット機能利用規約確認のその他のオプション" id="radix-_r_1m_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/f9e51985-5d6e-44a7-85f5-53cf34f70dcb" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">住んでいる家の値引き交渉術</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="住んでいる家の値引き交渉術のその他のオプション" id="radix-_r_1q_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/d14ae9ee-e3b9-4d17-ab92-8a1d681e655b" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">スプレッドシートのコード修正</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="スプレッドシートのコード修正のその他のオプション" id="radix-_r_1u_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/2c0681ab-0467-4498-ab6a-192a71b0b157" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">スクリーンショット文字変換webアプリ</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="スクリーンショット文字変換webアプリのその他のオプション" id="radix-_r_22_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/3ebc48a0-a6c0-4261-881e-7be850e48199" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">複数回線のNMP乗り換え戦略</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="複数回線のNMP乗り換え戦略のその他のオプション" id="radix-_r_26_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/b31269ce-41a7-4cd4-b86e-b2aa1acaf873" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">複数回線NMP運用プロジェクト</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="複数回線NMP運用プロジェクトのその他のオプション" id="radix-_r_2a_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/cef5cf95-aa95-449b-95f1-a096d8e7c42d" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">古物商の交付に必要な持ち物</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="古物商の交付に必要な持ち物のその他のオプション" id="radix-_r_2e_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/421c57ff-ff59-4415-978a-734fef3e8d32" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">出品商品の評価と分類</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="出品商品の評価と分類のその他のオプション" id="radix-_r_2i_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/aa2d0cb7-c828-4bf4-9154-1b81c38b00e9" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">Shopeeシンガポール月10万円利益の商品リサーチ</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="Shopeeシンガポール月10万円利益の商品リサーチのその他のオプション" id="radix-_r_2m_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/23b0cde7-78b5-462b-ae01-b29726bb31ce" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">パズルゲーム上海のリアルタイム支援方法</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="パズルゲーム上海のリアルタイム支援方法のその他のオプション" id="radix-_r_2q_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/f8121950-d7a2-4b6f-9cd6-82d1bce207d8" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">シンプルなお小遣い稼ぎサイトの構築</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="シンプルなお小遣い稼ぎサイトの構築のその他のオプション" id="radix-_r_2u_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/f3e03a1c-57f1-44b2-a70c-647169e72c05" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">プレイヤーレベル追跡シートの設計</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="プレイヤーレベル追跡シートの設計のその他のオプション" id="radix-_r_32_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/7fb1ba9d-9274-46e8-939d-84e06f7bcd7d" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">シート数値の整理と名称管理</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="シート数値の整理と名称管理のその他のオプション" id="radix-_r_36_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/885244e2-d1f7-4320-a580-95eecd1a59db" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">DinoOCR スプレッドシート連携最適化</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="DinoOCR スプレッドシート連携最適化のその他のオプション" id="radix-_r_3a_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/8432148b-e3f6-41eb-9181-4a710f18aab9" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">Hukusuusaitowo</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="Hukusuusaitowoのその他のオプション" id="radix-_r_3e_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/0b3fa6df-9672-4bc6-b0fe-d6df4dd59cfb" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">副業管理ツールの開発</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="副業管理ツールの開発のその他のオプション" id="radix-_r_3i_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/17476278-4861-4af4-b0a3-0c4eed226b70" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">シンガポール向け商品リサーチ200品リスト作成</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="シンガポール向け商品リサーチ200品リスト作成のその他のオプション" id="radix-_r_3m_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/42b3c45a-75b3-43a8-8879-52e2edf34bb4" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">Claude coworkの活用方法と機能</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="Claude coworkの活用方法と機能のその他のオプション" id="radix-_r_3q_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/2630c801-7892-4b0e-ad83-b2041b3b905a" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">ディスコードの発言を一括削除する方法</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="ディスコードの発言を一括削除する方法のその他のオプション" id="radix-_r_3u_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/5ecc4d08-4f42-49b3-a415-cbcfd306a4cb" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">iPhoneアプリ開発から公開までのロードマップ</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="iPhoneアプリ開発から公開までのロードマップのその他のオプション" id="radix-_r_42_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li><li style="opacity: 1;"><div class="relative group" data-state="closed"><a href="https://claude.ai/chat/881ca2ea-b3a5-4c45-83ec-029cbfc265ed" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-chat-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><span class="truncate text-sm whitespace-nowrap flex-1 group-hover:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] group-focus-within:[mask-image:linear-gradient(to_right,hsl(var(--always-black))_78%,transparent_95%)] [mask-size:100%_100%]">複数Webプロダクト向けXアカウント立ち上げ</span></div></a><div class="absolute right-0 top-1/2 -translate-y-1/2 transition-opacity duration-150 hidden group-hover:block group-focus-within:block opacity-0 group-hover:opacity-100 group-focus-within:opacity-100"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 aria-expanded:!bg-bg-400 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="複数Webプロダクト向けXアカウント立ち上げのその他のオプション" id="radix-_r_46_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M4.5 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m5.5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></div></div></li></ul><div class="relative group" data-state="closed"><a href="https://claude.ai/recents" class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 rounded-md px-3 min-w-[4rem] whitespace-nowrap !text-xs w-full !min-w-0 group py-1.5 rounded-lg px-4 !duration-75 overflow-hidden active:bg-bg-300 active:scale-[1.0] _fill_1abo4_9 _ghost_1abo4_96" data-dd-action-name="sidebar-more-item"><div class="-translate-x-2 w-full flex flex-row items-center justify-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256" class="shrink-0 "><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm12-88a12,12,0,1,1-12-12A12,12,0,0,1,140,128Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,128Zm-88,0a12,12,0,1,1-12-12A12,12,0,0,1,96,128Z"></path></svg><span class="truncate text-sm whitespace-nowrap flex-1">すべてのチャット</span></div></a></div></div></div></div></div></div><div class="flex items-center gap-2 transition border-t-0.5 border-border-300"><div class="flex-1 min-w-0"><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-9 px-4 py-2 rounded-lg min-w-[5rem] whitespace-nowrap !scale-100 flex-row !min-w-0 w-full rounded-none group px-2 !-outline-offset-2 transition-[gap] duration-150 ease-out gap-3 !py-8 my-0 [&amp;:has(.downloads-link:hover)]:!bg-transparent _fill_1abo4_9 _ghost_1abo4_96" type="button" data-testid="user-menu-button" aria-label="pandaさんの設定" id="radix-_r_49_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div class="relative flex-shrink-0"><div class="flex items-center justify-center rounded-full text-text-200 border-0.5 border-transparent group-hover:border-border-200 transition group-hover:opacity-90"><div class="flex shrink-0 items-center justify-center rounded-full font-bold select-none h-9 w-9 text-[16px] bg-text-200 text-bg-100">P</div></div></div><div class="opacity-100 transition-opacity ease-out duration-150 flex flex-1 text-sm justify-between items-center font-medium min-w-0"><div class="flex flex-col items-start min-w-0 flex-1 pr-1"><span class="w-full text-start block truncate">panda</span><span class="w-full truncate text-xs text-text-500 font-normal text-start">プロプラン</span></div><div class="flex items-center gap-2 flex-shrink-0 overflow-visible"><div class="relative overflow-visible"><div role="button" tabindex="0" class="downloads-link inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none font-base-bold
-          border-0.5
-          overflow-hidden
-          transition
-          duration-100
-          backface-hidden h-8 w-8 rounded-md !rounded-lg bg-transparent text-text-000 border-border-200/30 hover:bg-bg-400 hover:text-text-000 hover:border-transparent cursor-pointer" aria-label="アプリと拡張機能を入手" data-state="closed"><div class="text-text-300" style="width: 16px; height: 16px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="text-text-300" aria-hidden="true" style="flex-shrink: 0;"><path d="M16.5 13a.5.5 0 0 1 .5.5v2a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 15.5v-2a.5.5 0 0 1 1 0v2a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 .5-.5M10 3a.5.5 0 0 1 .5.5v8.686l3.126-3.518a.5.5 0 0 1 .748.664l-4 4.5-.08.071a.5.5 0 0 1-.668-.071l-4-4.5-.059-.082A.5.5 0 0 1 6.3 8.6l.075.068L9.5 12.186V3.5A.5.5 0 0 1 10 3"></path></svg></div></div></div><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 256 256" class="flex-shrink-0"><path d="M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z"></path></svg></div></div></button></div></div></div></nav></div></div><div id="main-content" class="w-full relative min-w-0 h-full" style="padding: 0px;"><div class="flex flex-col h-full"><header class="flex w-full bg-bg-100 h-12 mx-auto md:h-24 md:items-end max-w-4xl shrink-0 px-1" aria-hidden="false" data-testid="page-header"><div class="flex w-full items-center justify-between gap-4 pl-11 lg:px-8 px-4 md:px-8"><h1 class="text-text-100 flex items-center gap-2 text-center max-md:hidden min-w-0 font-heading text-2xl"><span class="truncate">プロジェクト</span></h1><div></div><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none font-base-bold
-        overflow-hidden
-        transition-transform
-        will-change-transform
-        ease-[cubic-bezier(0.165,0.85,0.45,1)]
-        duration-150
-        hover:scale-y-[1.015]
-        hover:scale-x-[1.005]
-        backface-hidden
-        after:absolute
-        after:inset-0
-        after:bg-[radial-gradient(at_bottom,hsla(var(--bg-000)/20%),hsla(var(--bg-000)/0%))]
-        after:opacity-0
-        after:transition
-        after:duration-200
-        after:translate-y-2
-        hover:after:opacity-100
-        hover:after:translate-y-0 h-9 px-4 py-2 rounded-lg min-w-[5rem] whitespace-nowrap pl-2 pr-3 gap-1 _fill_1abo4_9 _primary_1abo4_44" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"></path></svg>新規プロジェクト</button></div></header><main class="mx-auto mt-4 w-full flex-1 px-4 md:px-8 lg:mt-6 max-w-4xl min-h-0 flex flex-col !pb-0"><h1 class="font-heading text-text-200 mb-4 flex gap-1.5 md:hidden">プロジェクト</h1><div class="overflow-auto pb-20 px-1"><div class="pt-1 from-bg-100 via-bg-100 to-bg-100/0 top-0 z-[5] flex flex-col gap-4 bg-gradient-to-b via-80% max-md:via-90% sticky pb-4 md:pb-8"><div class="w-full"><div class="bg-bg-000
-  border
-  border-border-300
-  hover:border-border-200
-  transition-colors
-  placeholder:text-text-500
-  can-focus
-  disabled:cursor-not-allowed
-  disabled:opacity-50
-  font-large
-   h-11 px-3 rounded-[0.6rem] w-full w-full inline-flex cursor-text items-stretch gap-2 can-focus-within"><div class="flex items-center"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M8.5 2a6.5 6.5 0 0 1 4.935 10.728l4.419 4.419.064.078a.5.5 0 0 1-.693.693l-.079-.064-4.419-4.42A6.5 6.5 0 1 1 8.5 2m0 1a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11"></path></svg></div></div><input id="_r_vc_" class="w-full placeholder:text-text-500 m-0 bg-transparent p-0 hide-focus-ring disabled:cursor-not-allowed disabled:opacity-50" placeholder="プロジェクトを検索..." aria-label="プロジェクトを検索..." type="text" value=""></div></div><div class="flex w-full gap-4 justify-between items-center"><div></div><div class="flex items-center gap-2.5"><span class="text-text-500 font-base hidden md:inline">並び替え</span><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none font-base-bold
-          border-0.5
-          overflow-hidden
-          transition
-          duration-100
-          backface-hidden h-9 px-4 py-2 rounded-lg min-w-[5rem] whitespace-nowrap rounded py-1 px-2 max-w-full whitespace-nowrap text-ellipsis overflow-hidden flex items-center gap-1 md:pl-3 md:pr-2 !min-w-0 _fill_1abo4_9 _secondary_1abo4_72" type="button" aria-label="プロジェクトを並び替え" id="radix-_r_ve_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256" class="md:hidden"><path d="M128,128a8,8,0,0,1-8,8H48a8,8,0,0,1,0-16h72A8,8,0,0,1,128,128ZM48,72H184a8,8,0,0,0,0-16H48a8,8,0,0,0,0,16Zm56,112H48a8,8,0,0,0,0,16h56a8,8,0,0,0,0-16Zm125.66-21.66a8,8,0,0,0-11.32,0L192,188.69V112a8,8,0,0,0-16,0v76.69l-26.34-26.35a8,8,0,0,0-11.32,11.32l40,40a8,8,0,0,0,11.32,0l40-40A8,8,0,0,0,229.66,162.34Z"></path></svg><span class="hidden md:inline text-text-400">アクティビティ</span><div class="hidden md:inline text-text-300" style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="hidden md:inline text-text-300" aria-hidden="true" style="flex-shrink: 0;"><path d="M14.128 7.165a.502.502 0 0 1 .744.67l-4.5 5-.078.07a.5.5 0 0 1-.666-.07l-4.5-5-.06-.082a.501.501 0 0 1 .729-.656l.075.068L10 11.752z"></path></svg></div></button></div></div></div><div class="grid gap-3 md:grid-cols-2 md:gap-6 grid-cols-1 auto-rows-fr mb-3 md:mb-6"><div class="h-full"><div class="relative group h-full"><a href="https://claude.ai/project/019cf7df-f0d7-7608-b997-4958ffc3f215" class="from-bg-100 to-bg-100/30 border-0.5 border-border-300 hover:from-bg-000 hover:to-bg-000/80 hover:border-border-200 relative flex cursor-pointer flex-col overflow-hidden rounded-xl bg-gradient-to-b py-4 pl-5 pr-4 transition-all ease-in-out hover:shadow-sm active:scale-[0.98] h-full w-full" data-dd-action-name="project-cell"><div class="flex flex-col flex-grow gap-4"><div class="flex items-center pr-10 overflow-hidden"><div class="font-base-bold truncate">Shopee 海外輸出</div></div><div class="font-base text-text-300 line-clamp-3 flex-grow">## 役割
-Shopeeを使った日本→複数国への海外輸出ビジネスをサポートする専門アシスタント。
-ユーザーは運営初心者のため、専門用語は都度わかりやすく説明する。
+        }
+      },50);
+    })(idx,duration);
+  }
 
-## 主なサポート範囲
-- 商品リサーチ・競合調査（売れ筋・価格帯・需要分析）
-- 価格設定・利益計算（送料・手数料・為替を考慮）
-- 発送・物流管理（各国への配送方法・コスト比較）</div><div class="font-small text-text-500 mt-auto pt-3 flex justify-between"><span><span data-state="closed">19 日前</span>に更新</span></div></div></a><div class="absolute top-3 right-3 z-10 transition-opacity opacity-0 group-focus-within:opacity-100 group-hover:opacity-100"><span><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 pointer-events-auto data-[state=open]:bg-bg-300 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="Shopee 海外輸出のその他のオプション" id="radix-_r_vk_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M10 14a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m0-5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></span></div></div></div><div class="h-full"><div class="relative group h-full"><a href="https://claude.ai/project/019d575f-ddf7-74b4-bff5-556aca78ff0a" class="from-bg-100 to-bg-100/30 border-0.5 border-border-300 hover:from-bg-000 hover:to-bg-000/80 hover:border-border-200 relative flex cursor-pointer flex-col overflow-hidden rounded-xl bg-gradient-to-b py-4 pl-5 pr-4 transition-all ease-in-out hover:shadow-sm active:scale-[0.98] h-full w-full" data-dd-action-name="project-cell"><div class="flex flex-col flex-grow gap-4"><div class="flex items-center pr-10 overflow-hidden"><div class="font-base-bold truncate">BUBBLE POP 開発プロジェクト </div></div><div class="font-base text-text-300 line-clamp-3 flex-grow"></div><div class="font-small text-text-500 mt-auto pt-3 flex justify-between"><span><span data-state="closed">20 時間前</span>に更新</span></div></div></a><div class="absolute top-3 right-3 z-10 transition-opacity opacity-0 group-focus-within:opacity-100 group-hover:opacity-100"><span><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 pointer-events-auto data-[state=open]:bg-bg-300 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="BUBBLE POP 開発プロジェクト のその他のオプション" id="radix-_r_vn_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M10 14a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m0-5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></span></div></div></div><div class="h-full"><div class="relative group h-full"><a href="https://claude.ai/project/019cf4a6-2218-761e-8393-3d581256ca80" class="from-bg-100 to-bg-100/30 border-0.5 border-border-300 hover:from-bg-000 hover:to-bg-000/80 hover:border-border-200 relative flex cursor-pointer flex-col overflow-hidden rounded-xl bg-gradient-to-b py-4 pl-5 pr-4 transition-all ease-in-out hover:shadow-sm active:scale-[0.98] h-full w-full" data-dd-action-name="project-cell"><div class="flex flex-col flex-grow gap-4"><div class="flex items-center pr-10 overflow-hidden"><div class="font-base-bold truncate">ダイノミュータント</div></div><div class="font-base text-text-300 line-clamp-3 flex-grow">ゲームの記録、数値やシステムの考察、統計</div><div class="font-small text-text-500 mt-auto pt-3 flex justify-between"><span><span data-state="closed">19 日前</span>に更新</span></div></div></a><div class="absolute top-3 right-3 z-10 transition-opacity opacity-0 group-focus-within:opacity-100 group-hover:opacity-100"><span><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 pointer-events-auto data-[state=open]:bg-bg-300 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="ダイノミュータントのその他のオプション" id="radix-_r_vq_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M10 14a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m0-5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></span></div></div></div><div class="h-full"><div class="relative group h-full"><a href="https://claude.ai/project/019d32ee-9819-7182-adbc-c17f81a3ed29" class="from-bg-100 to-bg-100/30 border-0.5 border-border-300 hover:from-bg-000 hover:to-bg-000/80 hover:border-border-200 relative flex cursor-pointer flex-col overflow-hidden rounded-xl bg-gradient-to-b py-4 pl-5 pr-4 transition-all ease-in-out hover:shadow-sm active:scale-[0.98] h-full w-full" data-dd-action-name="project-cell"><div class="flex flex-col flex-grow gap-4"><div class="flex items-center pr-10 overflow-hidden"><div class="font-base-bold truncate">NMP戦略</div></div><div class="font-base text-text-300 line-clamp-3 flex-grow"></div><div class="font-small text-text-500 mt-auto pt-3 flex justify-between"><span><span data-state="closed">7 日前</span>に更新</span></div></div></a><div class="absolute top-3 right-3 z-10 transition-opacity opacity-0 group-focus-within:opacity-100 group-hover:opacity-100"><span><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 pointer-events-auto data-[state=open]:bg-bg-300 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="NMP戦略のその他のオプション" id="radix-_r_vt_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M10 14a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m0-5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></span></div></div></div><div class="h-full"><div class="relative group h-full"><a href="https://claude.ai/project/019cf7c0-9885-7028-828b-bca480a33a4a" class="from-bg-100 to-bg-100/30 border-0.5 border-border-300 hover:from-bg-000 hover:to-bg-000/80 hover:border-border-200 relative flex cursor-pointer flex-col overflow-hidden rounded-xl bg-gradient-to-b py-4 pl-5 pr-4 transition-all ease-in-out hover:shadow-sm active:scale-[0.98] h-full w-full" data-dd-action-name="project-cell"><div class="flex flex-col flex-grow gap-4"><div class="flex items-center pr-10 overflow-hidden"><div class="font-base-bold truncate">AIエージェント</div></div><div class="font-base text-text-300 line-clamp-3 flex-grow">AIを活用した仕組みや機能つくり</div><div class="font-small text-text-500 mt-auto pt-3 flex justify-between"><span><span data-state="closed">19 日前</span>に更新</span></div></div></a><div class="absolute top-3 right-3 z-10 transition-opacity opacity-0 group-focus-within:opacity-100 group-hover:opacity-100"><span><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 pointer-events-auto data-[state=open]:bg-bg-300 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="AIエージェントのその他のオプション" id="radix-_r_100_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M10 14a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m0-5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></span></div></div></div><div class="h-full"><div class="relative group h-full"><a href="https://claude.ai/project/019cfd38-41a4-7233-8f0b-18b1177fadb6" class="from-bg-100 to-bg-100/30 border-0.5 border-border-300 hover:from-bg-000 hover:to-bg-000/80 hover:border-border-200 relative flex cursor-pointer flex-col overflow-hidden rounded-xl bg-gradient-to-b py-4 pl-5 pr-4 transition-all ease-in-out hover:shadow-sm active:scale-[0.98] h-full w-full" data-dd-action-name="project-cell"><div class="flex flex-col flex-grow gap-4"><div class="flex items-center pr-10 overflow-hidden"><div class="font-base-bold truncate">小型プロダクトを作り収益を複数からえる</div></div><div class="font-base text-text-300 line-clamp-3 flex-grow"></div><div class="font-small text-text-500 mt-auto pt-3 flex justify-between"><span><span data-state="closed">18 日前</span>に更新</span></div></div></a><div class="absolute top-3 right-3 z-10 transition-opacity opacity-0 group-focus-within:opacity-100 group-hover:opacity-100"><span><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 pointer-events-auto data-[state=open]:bg-bg-300 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="小型プロダクトを作り収益を複数からえるのその他のオプション" id="radix-_r_103_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M10 14a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m0-5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></span></div></div></div><div class="h-full"><div class="relative group h-full"><a href="https://claude.ai/project/019cfd4f-d875-71c5-ae16-46492b14722c" class="from-bg-100 to-bg-100/30 border-0.5 border-border-300 hover:from-bg-000 hover:to-bg-000/80 hover:border-border-200 relative flex cursor-pointer flex-col overflow-hidden rounded-xl bg-gradient-to-b py-4 pl-5 pr-4 transition-all ease-in-out hover:shadow-sm active:scale-[0.98] h-full w-full" data-dd-action-name="project-cell"><div class="flex flex-col flex-grow gap-4"><div class="flex items-center pr-10 overflow-hidden"><div class="font-base-bold truncate">漫画編集</div></div><div class="font-base text-text-300 line-clamp-3 flex-grow"></div><div class="font-small text-text-500 mt-auto pt-3 flex justify-between"><span><span data-state="closed">18 日前</span>に更新</span></div></div></a><div class="absolute top-3 right-3 z-10 transition-opacity opacity-0 group-focus-within:opacity-100 group-hover:opacity-100"><span><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 pointer-events-auto data-[state=open]:bg-bg-300 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="漫画編集のその他のオプション" id="radix-_r_106_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M10 14a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m0-5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></span></div></div></div><div class="h-full"><div class="relative group h-full"><a href="https://claude.ai/project/019cfcea-8fb6-7495-8e3d-d9f67271c3c4" class="from-bg-100 to-bg-100/30 border-0.5 border-border-300 hover:from-bg-000 hover:to-bg-000/80 hover:border-border-200 relative flex cursor-pointer flex-col overflow-hidden rounded-xl bg-gradient-to-b py-4 pl-5 pr-4 transition-all ease-in-out hover:shadow-sm active:scale-[0.98] h-full w-full" data-dd-action-name="project-cell"><div class="flex flex-col flex-grow gap-4"><div class="flex items-center pr-10 overflow-hidden"><div class="font-base-bold truncate">確定申告アシスタント</div></div><div class="font-base text-text-300 line-clamp-3 flex-grow"></div><div class="font-small text-text-500 mt-auto pt-3 flex justify-between"><span><span data-state="closed">18 日前</span>に更新</span></div></div></a><div class="absolute top-3 right-3 z-10 transition-opacity opacity-0 group-focus-within:opacity-100 group-hover:opacity-100"><span><button class="inline-flex
-  items-center
-  justify-center
-  relative
-  isolate
-  shrink-0
-  can-focus
-  select-none
-  disabled:pointer-events-none
-  disabled:opacity-50
-  disabled:shadow-none
-  disabled:drop-shadow-none border-transparent
-          transition
-          font-base
-          duration-300
-          ease-[cubic-bezier(0.165,0.85,0.45,1)] h-8 w-8 rounded-md active:!scale-100 pointer-events-auto data-[state=open]:bg-bg-300 _fill_1abo4_9 _ghost_1abo4_96" type="button" aria-label="確定申告アシスタントのその他のオプション" id="radix-_r_109_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink: 0;"><path d="M10 14a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m0-5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3"></path></svg></div></button></span></div></div></div></div></div></main></div></div></div></div></div><div role="region" aria-label="通知 (F8)" tabindex="-1" style="pointer-events: none;"><ol tabindex="-1" class="fixed top-0 z-toast flex flex-col gap-3 p-4 draggable-none" style="right: var(--launch-drawer-width, 0px);"></ol></div><iframe src="./bubble pop_files/isolated-segment.html" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin" title="マーケティング分析" style="display: none;"></iframe></div><script src="./bubble pop_files/s.js.ダウンロード" async=""></script><iframe id="intercom-frame" style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important; pointer-events: none;" aria-hidden="true" tabindex="-1" title="Intercom" src="./bubble pop_files/saved_resource.html"></iframe><div class="intercom-lightweight-app"><style id="intercom-lightweight-app-style" type="text/css">
-  @keyframes intercom-lightweight-app-launcher {
-    from {
-      opacity: 0;
-      transform: scale(0.5);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
+  // 同色モード: 自動更新（連鎖・lastColor変えない）＋ペナルティ-1000pt
+  function autoRefresh(idx){
+    var cell=cells[idx];if(!cell)return;
+    // ペナルティ
+    score=Math.max(0,score-1000);sd.textContent=score;
+    spawnFloat(cell,'-1000','rgba(255,80,80,0.95)');
+    cell.popping=true;
+    cell.outer.classList.remove('shaking');
+    cell.scaleWrap.style.transform='scale(1)';
+    cell.outer.classList.add('pop');
+    setTimeout(function(){
+      var prevBack=cell.back;cell.front=prevBack;cell.back=randC();
+      cell.popping=false;cell.outer.classList.remove('pop');
+      applyStyle(cell.outer,cell.front,cell.back);
+      setTimerRing(cell.outer,1);setBubbleScale(cell.scaleWrap,1);
+      void cell.outer.offsetWidth;cell.outer.classList.add('rev');
+      setTimeout(function(){cell.outer.classList.remove('rev');},380);
+      if(running)startOneBubbleTimer(idx);
+    },220);
+  }
+
+  function clearAllBubbleTimers(){
+    for(var i=0;i<bubbleTimers.length;i++){if(bubbleTimers[i])clearInterval(bubbleTimers[i]);bubbleTimers[i]=null;}
+  }
+  function resetAllBubbleTimers(){
+    for(var i=0;i<9;i++){var c=cells[i];if(!c||c.popping)continue;startOneBubbleTimer(i);}
+  }
+  function burstAndGameOver(idx){
+    var cell=cells[idx];
+    // 赤フラッシュ
+    var fl=document.createElement('div');
+    fl.style.cssText='position:absolute;inset:0;border-radius:16px;background:rgba(255,40,40,0.18);z-index:15;pointer-events:none;animation:fRed 0.4s ease-out forwards;';
+    if(!document.getElementById('fRedSt')){var st=document.createElement('style');st.id='fRedSt';st.textContent='@keyframes fRed{0%{opacity:1;}100%{opacity:0;}}';document.head.appendChild(st);}
+    document.getElementById('gw').appendChild(fl);
+    setTimeout(function(){if(fl.parentNode)fl.parentNode.removeChild(fl);},400);
+
+    // 残基消費
+    lives--;
+    var lostEl=document.getElementById('life'+(lives));
+    if(lostEl){lostEl.className='life losing';setTimeout(function(){lostEl.className='life lost';lostEl.textContent='🖤';},350);}
+
+    if(lives<=0){
+      // 残基0 → ゲームオーバー
+      if(cell){cell.popping=true;cell.outer.classList.remove('shaking');cell.outer.classList.add('pop');}
+      running=false;clearAllBubbleTimers();clearInterval(diffLoopInt);
+      ci.innerHTML='<span class="danger">GAME OVER</span>';
+      setTimeout(endGame,500);
+    } else {
+      // 残機あり → バブル破裂して新しいバブルに差し替え、タイマー再開
+      ci.innerHTML='<span class="danger">TIME OUT — '+lives+' left</span>';
+      setTimeout(function(){if(running)ci.innerHTML='　';},1000);
+      if(cell){
+        cell.popping=true;cell.outer.classList.remove('shaking');cell.outer.classList.add('pop');
+        setTimeout(function(){
+          var prevBack=cell.back;cell.front=prevBack;cell.back=randC();
+          cell.popping=false;cell.outer.classList.remove('pop');
+          applyStyle(cell.outer,cell.front,cell.back);
+          setTimerRing(cell.outer,1);setBubbleScale(cell.scaleWrap,1);
+          void cell.outer.offsetWidth;cell.outer.classList.add('rev');
+          setTimeout(function(){cell.outer.classList.remove('rev');},380);
+          if(running)startOneBubbleTimer(idx);
+        },240);
+      }
     }
   }
 
-  @keyframes intercom-lightweight-app-gradient {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  function buildHist(){
+    hist.innerHTML='';
+    for(var i=0;i<6;i++){var s=document.createElement('div');s.className='hs empty';s.id='hs'+i;hist.appendChild(s);}
   }
-
-  @keyframes intercom-lightweight-app-messenger {
-    0% {
-      opacity: 0;
-      transform: scale(0);
-    }
-    40% {
-      opacity: 1;
-    }
-    100% {
-      transform: scale(1);
+  function renderHist(){
+    for(var i=0;i<6;i++){
+      var slot=document.getElementById('hs'+i);if(!slot)continue;
+      if(i>=history.length){slot.className='hs empty';slot.innerHTML='';continue;}
+      var h=history[i];
+      var c=COLORS.filter(function(x){return x.name===h.colorName;})[0];
+      slot.className='hs'+(i===0?' new':'');
+      var badge='';
+      if(h.bonusType==='both') badge='<div class="hbadge" style="background:rgba(255,205,80,0.95);">DT</div>';
+      else if(h.bonusType==='duo') badge='<div class="hbadge" style="background:rgba(255,205,80,0.95);">2C</div>';
+      else if(h.bonusType==='tri') badge='<div class="hbadge" style="background:rgba(80,240,185,0.95);">3C</div>';
+      var op=Math.max(0.3,1-i*0.1);
+      slot.innerHTML='<div class="hdot" style="background:'+(c?c.solid:'#888')+';opacity:'+op+';"><div style="position:absolute;top:6%;left:12%;width:30%;height:24%;border-radius:50%;background:rgba(255,255,255,0.5);filter:blur(2px);"></div></div>'+badge;
     }
   }
-
-  .intercom-lightweight-app {
-    position: fixed;
-    z-index: 2147483001;
-    width: 0;
-    height: 0;
-    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  function pushHist(colorName,bonusType){
+    history.unshift({colorName:colorName,bonusType:bonusType});
+    if(history.length>6)history.pop();
+    renderHist();
+  }
+  function spawnFloat(cell,text,color){
+    var fl=document.createElement('div');fl.className='sf';fl.textContent=text;
+    if(color)fl.style.color=color;
+    var r=cell.wrap.getBoundingClientRect();
+    var wr=document.getElementById('gw').getBoundingClientRect();
+    fl.style.left=(r.left-wr.left+r.width/2-16)+'px';
+    fl.style.top=(r.top-wr.top)+'px';
+    document.getElementById('gw').appendChild(fl);
+    setTimeout(function(){if(fl.parentNode)fl.parentNode.removeChild(fl);},900);
   }
 
-  .intercom-lightweight-app-gradient {
-    position: fixed;
-    z-index: 2147483002;
-    width: 500px;
-    height: 500px;
-    bottom: 0;
-    right: 0;
-    pointer-events: none;
-    background: radial-gradient(
-      ellipse at bottom right,
-      rgba(29, 39, 54, 0.16) 0%,
-      rgba(29, 39, 54, 0) 72%);
-    animation: intercom-lightweight-app-gradient 200ms ease-out;
+  function popBubble(idx){
+    if(!running)return;
+    var cell=cells[idx];if(!cell||cell.popping)return;
+    var colorName=cell.front.name;
+
+    if(gameMode==='diff'&&lastColor!==null&&colorName===lastColor){
+      // 残基を1消費
+      lives--;
+      var lostEl=document.getElementById('life'+(lives));
+      if(lostEl){lostEl.className='life losing';setTimeout(function(){lostEl.className='life lost';lostEl.textContent='🖤';},350);}
+      // 赤フラッシュ
+      var fl2=document.createElement('div');
+      fl2.style.cssText='position:absolute;inset:0;border-radius:16px;background:rgba(255,40,40,0.18);z-index:15;pointer-events:none;animation:fRed 0.4s ease-out forwards;';
+      if(!document.getElementById('fRedSt')){var st2=document.createElement('style');st2.id='fRedSt';st2.textContent='@keyframes fRed{0%{opacity:1;}100%{opacity:0;}}';document.head.appendChild(st2);}
+      document.getElementById('gw').appendChild(fl2);
+      setTimeout(function(){if(fl2.parentNode)fl2.parentNode.removeChild(fl2);},400);
+      if(lives<=0){
+        // 残基0 → ゲームオーバー
+        running=false;clearAllBubbleTimers();clearInterval(diffLoopInt);
+        ci.innerHTML='<span class="danger">GAME OVER</span>';
+        setTimeout(endGame,500);
+      } else {
+        // 残機あり → lastColorリセットして継続
+        ci.innerHTML='<span class="danger">MISS — '+lives+' left</span>';
+        lastColor=null;
+        setTimeout(function(){if(running)ci.innerHTML='　';},1000);
+      }
+      return;
+    }
+
+    cell.popping=true;
+    clearInterval(bubbleTimers[idx]);bubbleTimers[idx]=null;
+
+    var pts=0,bonusResult={pts:0,type:null};
+    if(gameMode==='same'){
+      if(lastColor===null)combo=1;
+      else if(colorName===lastColor)combo=Math.min(combo+1,6);
+      else combo=1;
+      pts=getChainPts(combo)*phase;
+    } else {
+      bonusResult=calcBonus(colorName);
+      var diffBase=100+diffTimeBonus;
+      pts=bonusResult.pts>0?bonusResult.pts:diffBase;
+    }
+
+    lastColor=colorName;
+    score+=pts;sd.textContent=score;
+    pushHist(colorName,bonusResult.type);
+
+    if(gameMode==='same'){
+      if(combo>=6)ci.innerHTML='<span>'+combo+'連鎖 MAX</span> 900pt';
+      else if(combo>=4)ci.innerHTML='<span>'+combo+'連鎖</span> '+getChainPts(combo)+'pt';
+      else if(combo>=2)ci.innerHTML='<span>'+combo+'連鎖</span> あと'+(6-combo)+'でMAX';
+      else ci.innerHTML='　';
+    } else {
+      var ciText='';
+      if(bonusResult.type==='duo'||bonusResult.type==='both') ciText+='<span style="color:rgba(255,205,80,1);">2COLOR +'+duoPts(duoCount)+'</span> ';
+      if(bonusResult.type==='tri'||bonusResult.type==='both') ciText+='<span style="color:rgba(80,240,185,1);">3COLOR +'+triPts(triCount)+'</span>';
+      ci.innerHTML=ciText||'　';
+    }
+
+    var floatColor=null;
+    if(bonusResult.type==='both')floatColor='rgba(255,240,120,0.95)';
+    else if(bonusResult.type==='tri')floatColor='rgba(80,240,185,0.95)';
+    else if(bonusResult.type==='duo')floatColor='rgba(255,205,80,0.95)';
+    spawnFloat(cell,'+'+pts,floatColor);
+
+    cell.outer.classList.remove('shaking');
+    cell.scaleWrap.style.transform='scale(1)';
+    cell.outer.classList.add('pop');
+
+    setTimeout(function(){
+      var prevBack=cell.back;cell.front=prevBack;cell.back=randC();
+      cell.popping=false;cell.outer.classList.remove('pop');
+      applyStyle(cell.outer,cell.front,cell.back);
+      setTimerRing(cell.outer,1);setBubbleScale(cell.scaleWrap,1);
+      void cell.outer.offsetWidth;cell.outer.classList.add('rev');
+      setTimeout(function(){cell.outer.classList.remove('rev');},380);
+      if(running)startOneBubbleTimer(idx);
+    },240);
   }
 
-  .intercom-lightweight-app-launcher {
-    position: fixed;
-    z-index: 2147483003;
-    padding: 0 !important;
-    margin: 0 !important;
-    border: none;
-    bottom: 20px;
-    right: 20px;
-    max-width: 48px;
-    width: 48px;
-    max-height: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: #0099CC;
-    cursor: pointer;
-    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.06), 0 2px 32px 0 rgba(0, 0, 0, 0.16);
-    transition: transform 167ms cubic-bezier(0.33, 0.00, 0.00, 1.00);
-    box-sizing: content-box;
-  }
-
-
-  .intercom-lightweight-app-launcher:hover {
-    transition: transform 250ms cubic-bezier(0.33, 0.00, 0.00, 1.00);
-    transform: scale(1.1)
-  }
-
-  .intercom-lightweight-app-launcher:active {
-    transform: scale(0.85);
-    transition: transform 134ms cubic-bezier(0.45, 0, 0.2, 1);
-  }
-
-
-  .intercom-lightweight-app-launcher:focus {
-    outline: none;
-
-    
-  }
-
-  .intercom-lightweight-app-launcher-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 48px;
-    height: 48px;
-    transition: transform 100ms linear, opacity 80ms linear;
-  }
-
-  .intercom-lightweight-app-launcher-icon-open {
-    
-        opacity: 1;
-        transform: rotate(0deg) scale(1);
-      
-  }
-
-  .intercom-lightweight-app-launcher-icon-open svg {
-    width: 24px;
-    height: 24px;
-  }
-
-  .intercom-lightweight-app-launcher-icon-open svg path {
-    fill: rgb(255, 255, 255);
-  }
-
-  .intercom-lightweight-app-launcher-icon-self-serve {
-    
-        opacity: 1;
-        transform: rotate(0deg) scale(1);
-      
-  }
-
-  .intercom-lightweight-app-launcher-icon-self-serve svg {
-    height: 44px;
-  }
-
-  .intercom-lightweight-app-launcher-icon-self-serve svg path {
-    fill: rgb(255, 255, 255);
-  }
-
-  .intercom-lightweight-app-launcher-custom-icon-open {
-    max-height: 24px;
-    max-width: 24px;
-
-    
-        opacity: 1;
-        transform: rotate(0deg) scale(1);
-      
-  }
-
-  .intercom-lightweight-app-launcher-icon-minimize {
-    
-        opacity: 0;
-        transform: rotate(-60deg) scale(0);
-      
-  }
-
-  .intercom-lightweight-app-launcher-icon-minimize svg path {
-    fill: rgb(255, 255, 255);
-  }
-
-  /* Extended launcher styles */
-  .intercom-lightweight-app-launcher.intercom-launcher-extended {
-    width: calc(180px - 30px);
-    max-width: calc(180px - 30px);
-    height: calc(45px - 26px);
-    max-height: calc(45px - 26px);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 12px 16px 12px 12px !important;
-    gap: 6px;
-    /* Use theme background instead of hardcoded gradient */
-    background: #0099CC;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0px -2px 50px rgba(0, 0, 0, 0.1);
-    
-  }
-
-  .intercom-lightweight-app-launcher.intercom-launcher-extended .intercom-lightweight-app-launcher-icon {
-    position: relative;
-    width: 24px;
-    height: 24px;
-  }
-
-  .intercom-lightweight-app-launcher-text {
-    /* Match text color with launcher icon */
-    color: rgb(255, 255, 255);
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.5;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 140px;
-    opacity: 1;
-    transition: opacity 80ms linear;
-  }
-
-  .intercom-lightweight-app-messenger {
-    position: fixed;
-    z-index: 2147483003;
-    overflow: hidden;
-    background-color: #ffffff;
-    animation: intercom-lightweight-app-messenger 250ms cubic-bezier(0, 1, 1, 1);
-    transform-origin: bottom right;
-
-    
-        width: 400px;
-        height: calc(100% - 40px);
-        max-height: 704px;
-        min-height: 250px;
-        right: 20px;
-        bottom: 20px;
-        box-shadow: 0 5px 40px rgba(0,0,0,0.16);
-      
-
-    border-radius: 24px;
-  }
-
-  .intercom-lightweight-app-messenger-header {
-    height: 64px;
-    border-bottom: none;
-    background: #ffffff;
-  }
-
-  .intercom-lightweight-app-messenger-footer{
-    position:absolute;
-    bottom:0;
-    width: 100%;
-    height: 80px;
-    background: #ffffff;
-    font-size: 14px;
-    line-height: 21px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
-  }
-
-  @media print {
-    .intercom-lightweight-app {
-      display: none;
+  function doNuke(){
+    if(!running||nukeUsed)return;
+    nukeUsed=true;bnuke.disabled=true;
+    score+=900;sd.textContent=score;
+    if(gameMode==='same'){
+      cells.forEach(function(cell,i){
+        if(cell.popping)return;cell.popping=true;
+        clearInterval(bubbleTimers[i]);bubbleTimers[i]=null;
+        setTimeout(function(){
+          cell.outer.classList.add('pop');
+          spawnFloat(cell,'+100','rgba(255,200,80,0.9)');
+          setTimeout(function(){
+            var pb=cell.back;cell.front=pb;cell.back=randC();
+            cell.popping=false;cell.outer.classList.remove('pop');
+            applyStyle(cell.outer,cell.front,cell.back);
+            setTimerRing(cell.outer,1);setBubbleScale(cell.scaleWrap,1);
+            void cell.outer.offsetWidth;cell.outer.classList.add('rev');
+            setTimeout(function(){cell.outer.classList.remove('rev');},380);
+            if(running)startOneBubbleTimer(i);
+          },240);
+        },i*45);
+      });
+    } else {
+      resetAllBubbleTimers();
+      spawnFloat(cells[4],'+900','rgba(255,200,80,0.95)');
+      var fl=document.createElement('div');
+      fl.style.cssText='position:absolute;inset:0;border-radius:16px;background:rgba(255,200,0,0.1);z-index:15;pointer-events:none;animation:fGold 0.5s ease-out forwards;';
+      if(!document.getElementById('fGoldSt')){var st=document.createElement('style');st.id='fGoldSt';st.textContent='@keyframes fGold{0%{opacity:1;}100%{opacity:0;}}';document.head.appendChild(st);}
+      document.getElementById('gw').appendChild(fl);
+      setTimeout(function(){if(fl.parentNode)fl.parentNode.removeChild(fl);},500);
+      ci.innerHTML='<span style="color:rgba(255,200,80,0.95);">NUKE — TIMER RESET +900pt</span>';
     }
   }
-</style></div></body></html>
+
+  // イントロ演出
+  var introOverlay=document.getElementById('intro-overlay');
+  var ibWrapInner=document.getElementById('ib-wrap-inner');
+  var IB_CIRC=2*Math.PI*46;
+  var introTimerInt=null;
+
+  function showIntro(){
+    introOverlay.style.display='flex';
+    ibWrapInner.style.animation='';
+    // クラスを一旦外してからrAFでrevealアニメ付与
+    ibWrapInner.className='';
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        ibWrapInner.className='ib-reveal';
+        setTimeout(function(){ibWrapInner.className='ib-floating';},520);
+      });
+    });
+  }
+
+  function popIntroAndStart(){
+    clearInterval(introTimerInt);
+    ibWrapInner.className='ib-popping';
+    setTimeout(function(){
+      introOverlay.style.display='none';
+      ibWrapInner.className='';
+      actualStartGame();
+    },320);
+  }
+
+  introOverlay.addEventListener('click',popIntroAndStart);
+  introOverlay.addEventListener('touchstart',function(e){e.preventDefault();popIntroAndStart();},{passive:false});
+
+  function startGame(){
+    ms.style.display='none';ov.style.display='none';
+    // グリッドとHUDを事前構築しておく
+    score=0;combo=0;timeLeft=20;phase=1;lastColor=null;history=[];
+    nukeUsed=false;elapsedSec=0;lives=3;
+    currentBubbleTime=DIFF_BASE;sameCurrentTime=SAME_BASE;sameElapsed=0;
+    duoCount=0;triCount=0;colorLog=[];diffTimeBonus=0;
+    sd.textContent='0';bd.textContent=best[gameMode];
+    tr.style.strokeDashoffset='0';tr.style.stroke='rgba(160,130,255,0.9)';
+    pb.textContent='×1';ci.innerHTML='　';speedInfo.textContent='';
+    bnuke.disabled=false;
+    // ライフUI初期化
+    var livesEl=document.getElementById('lives');
+    for(var li=0;li<3;li++){var l=document.getElementById('life'+li);l.className='life';l.textContent='❤️';}
+    clearInterval(timerInt);clearInterval(diffLoopInt);clearInterval(sameLoopInt);clearAllBubbleTimers();
+    if(gameMode==='same'){
+      mbadge.textContent='SAME';mbadge.className='mb-same';
+      tt.textContent='20';bonusBar.classList.remove('active');
+      bnuke.textContent='NUKE (x1)';
+      speedInfo.textContent=(SAME_BASE/1000)+'s';
+      livesEl.style.display='none';
+    } else {
+      mbadge.textContent='DIFF';mbadge.className='mb-diff';
+      tt.textContent='0';tt.style.color='#fff';tt.style.transform='';tt.style.transition='';
+      tr.style.strokeDashoffset=CIRC_HUD+'';
+      bonusBar.classList.add('active');speedInfo.textContent=(DIFF_BASE/1000)+'s';
+      bnuke.textContent='NUKE — RESET (x1)';
+      livesEl.style.display='flex';
+      updateBonusUI();
+    }
+    buildGrid();buildHist();
+    showIntro();
+  }
+
+  function actualStartGame(){
+    running=true;
+    for(var i=0;i<9;i++)startOneBubbleTimer(i);
+    if(gameMode==='same'){
+      timerInt=setInterval(function(){
+        timeLeft--;tt.textContent=timeLeft;
+        tr.style.strokeDashoffset=CIRC_HUD*(1-timeLeft/20);
+        if(timeLeft/20<0.25)tr.style.stroke='rgba(255,80,80,0.9)';
+        else if(timeLeft/20<0.5)tr.style.stroke='rgba(255,160,40,0.9)';
+        if(timeLeft===10){phase=2;pb.textContent='×2';phasePulse();}
+        if(timeLeft===5){phase=3;pb.textContent='×3';phasePulse();}
+        if(timeLeft<=0){clearInterval(timerInt);clearInterval(sameLoopInt);clearAllBubbleTimers();running=false;endGame();}
+      },1000);
+      sameLoopInt=setInterval(function(){
+        if(!running)return;
+        sameElapsed++;
+        if(sameElapsed%SAME_ACCEL===0){
+          var nt=Math.max(SAME_MIN,sameCurrentTime-1000);
+          if(nt!==sameCurrentTime){sameCurrentTime=nt;speedInfo.textContent=(nt/1000)+'s';}
+        }
+      },1000);
+    } else {
+      diffLoopInt=setInterval(function(){
+        if(!running)return;
+        elapsedSec++;
+        tt.textContent=elapsedSec;
+        // 20秒で1周
+        tr.style.strokeDashoffset=CIRC_HUD*(1-(elapsedSec%20)/20);
+        tr.style.stroke='rgba(220,80,60,0.9)';
+        // 20秒ごと：基礎ポイント+20累積 ＋ タイマー特殊演出
+        if(elapsedSec%20===0){
+          diffTimeBonus+=20;
+          // タイマーリングをフラッシュ
+          tr.style.stroke='rgba(255,210,80,1)';
+          tr.style.strokeDashoffset='0';
+          setTimeout(function(){
+            tr.style.stroke='rgba(220,80,60,0.9)';
+          },500);
+          // HUDタイマー数字を一瞬強調
+          tt.style.color='rgba(255,210,80,1)';tt.style.transform='scale(1.4)';tt.style.transition='transform 0.2s,color 0.2s';
+          setTimeout(function(){tt.style.color='#fff';tt.style.transform='scale(1)';},500);
+          // ci表示
+          ci.innerHTML='<span style="color:rgba(255,210,80,1);">BASE +'+(100+diffTimeBonus)+'pt</span>';
+          setTimeout(function(){if(gameMode==='diff'&&running)ci.innerHTML='　';},1500);
+        }
+        if(elapsedSec%DIFF_ACCEL===0){
+          var nt=Math.max(DIFF_MIN,currentBubbleTime-1000);
+          if(nt!==currentBubbleTime){currentBubbleTime=nt;speedInfo.textContent=(nt/1000)+'s';}
+        }
+      },1000);
+    }
+  }
+
+  function phasePulse(){
+    pb.style.background='rgba(160,130,255,0.45)';
+    setTimeout(function(){pb.style.background='rgba(120,60,240,0.2)';},400);
+  }
+
+  function endGame(){
+    clearInterval(timerInt);clearInterval(diffLoopInt);clearInterval(sameLoopInt);
+    clearAllBubbleTimers();running=false;
+    var isNew=score>best[gameMode];
+    if(isNew)best[gameMode]=score;
+    bd.textContent=best[gameMode];
+    scoreHistory[gameMode].push(score);
+    // ベスト5を降順で保持
+    scoreHistory[gameMode].sort(function(a,b){return b-a;});
+    if(scoreHistory[gameMode].length>5)scoreHistory[gameMode]=scoreHistory[gameMode].slice(0,5);
+    ovScore.textContent=score;ovBest.textContent=best[gameMode];
+    ovNewBest.textContent=isNew?'NEW BEST':'';
+    ovNewBest.className=isNew?'nb-show':'';
+    var sl=scoreHistory[gameMode],histHTML='';
+    for(var i=0;i<sl.length;i++){
+      var isBest=(i===0);
+      var isCurrent=(sl[i]===score&&!histHTML.includes('current-mark'));
+      histHTML+='<div class="hsr'+(isBest?' latest':'')+'"><span>#'+(i+1)+'</span><span>'+(isBest?'★ ':'')+sl[i]+'pt</span></div>';
+    }
+    ovHistory.innerHTML=histHTML;
+    var ml=gameMode==='same'?'SAME':'DIFF';
+    var ex=gameMode==='diff'?' '+elapsedSec+'s (2C:'+duoCount+' 3C:'+triCount+')':'';
+    ovSub.textContent='['+ml+']'+ex;
+    ov.style.display='flex';
+  }
+
+  document.getElementById('card-same').addEventListener('click',function(){gameMode='same';document.getElementById('card-same').classList.add('sel');document.getElementById('card-diff').classList.remove('sel');});
+  document.getElementById('card-diff').addEventListener('click',function(){gameMode='diff';document.getElementById('card-diff').classList.add('sel');document.getElementById('card-same').classList.remove('sel');});
+  document.getElementById('btn-go').addEventListener('click',startGame);
+  document.getElementById('btn-go').addEventListener('touchstart',function(e){e.preventDefault();startGame();},{passive:false});
+  document.getElementById('btn-retry').addEventListener('click',startGame);
+  document.getElementById('btn-retry').addEventListener('touchstart',function(e){e.preventDefault();startGame();},{passive:false});
+  document.getElementById('btn-back').addEventListener('click',function(){
+    clearInterval(timerInt);clearInterval(diffLoopInt);clearInterval(sameLoopInt);clearAllBubbleTimers();
+    clearInterval(introTimerInt);introOverlay.style.display='none';
+    running=false;ov.style.display='none';ms.style.display='flex';
+  });
+  bnuke.addEventListener('click',doNuke);
+  bnuke.addEventListener('touchstart',function(e){e.preventDefault();doNuke();},{passive:false});
+  document.getElementById('btn-share').addEventListener('click',function(){
+    var ml=gameMode==='same'?'SAME':'DIFF';
+    var ex=gameMode==='diff'?' ('+elapsedSec+'s)':'';
+    var text='BUBBLE POP ['+ml+'] '+score+'pt'+ex+' / BEST:'+best[gameMode]+'pt';
+    if(navigator.clipboard)navigator.clipboard.writeText(text).then(function(){
+      document.getElementById('sc').textContent='Copied!';
+      setTimeout(function(){document.getElementById('sc').textContent='';},2000);
+    });
+  });
+  buildHist();
+})();
+</script>
+</body>
+</html>
