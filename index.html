@@ -115,7 +115,69 @@ body{display:flex;align-items:flex-start;justify-content:center;}
 @keyframes lifeLost{0%{transform:scale(1.4);}100%{transform:scale(0.75);opacity:0.15;}}
 .life.losing{animation:lifeLost 0.35s ease-out forwards;}
 
-/* スタート演出オーバーレイ */
+/* 設定ボタン */
+#btn-settings{position:absolute;top:18px;right:18px;width:36px;height:36px;border:none;background:rgba(255,255,255,0.07);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;z-index:21;-webkit-tap-highlight-color:transparent;}
+#btn-settings:hover{background:rgba(255,255,255,0.13);}
+#btn-settings svg{width:18px;height:18px;}
+
+/* 設定パネル */
+#settings-panel{position:absolute;inset:0;border-radius:16px;display:none;flex-direction:column;background:rgba(6,6,15,0.98);z-index:22;overflow:hidden;}
+#settings-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px 12px;border-bottom:1px solid rgba(255,255,255,0.07);flex-shrink:0;}
+#settings-title{font-family:'Orbitron',monospace;font-size:13px;font-weight:700;color:#fff;letter-spacing:2px;}
+#btn-settings-close{width:30px;height:30px;border:none;background:rgba(255,255,255,0.06);border-radius:50%;cursor:pointer;color:rgba(255,255,255,0.6);font-size:15px;display:flex;align-items:center;justify-content:center;}
+#settings-body{padding:10px 16px 16px;display:flex;flex-direction:column;gap:12px;overflow:hidden;}
+.stg-section{display:flex;flex-direction:column;gap:5px;}
+.stg-label{font-family:'Orbitron',monospace;font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);text-transform:uppercase;padding-bottom:3px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.stg-row{display:flex;align-items:center;justify-content:space-between;padding:7px 11px;background:rgba(255,255,255,0.03);border-radius:7px;cursor:pointer;transition:background 0.2s;}
+.stg-row:hover{background:rgba(255,255,255,0.07);}
+.stg-row-label{font-size:11px;color:rgba(255,255,255,0.75);font-family:'Exo 2',sans-serif;}
+.stg-row-sub{font-size:9px;color:rgba(255,255,255,0.3);margin-top:1px;}
+.stg-row-left{display:flex;flex-direction:column;}
+/* 言語トグル */
+.lang-toggle{display:flex;gap:4px;}
+.lang-btn{padding:4px 12px;border-radius:6px;border:1px solid rgba(255,255,255,0.15);background:transparent;color:rgba(255,255,255,0.4);font-family:'Orbitron',monospace;font-size:10px;cursor:pointer;transition:all 0.2s;}
+.lang-btn.active{background:rgba(100,60,220,0.6);border-color:rgba(180,150,255,0.6);color:#fff;}
+/* ボリュームスライダー */
+.vol-slider{width:100px;accent-color:rgba(140,100,255,0.9);}
+/* テーマグリッド */
+.theme-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;}
+.theme-card{border-radius:8px;padding:7px 4px 6px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;border:1.5px solid transparent;transition:border-color 0.2s,background 0.2s;position:relative;}
+.theme-card.active{border-color:rgba(180,150,255,0.9);}
+.theme-card.locked{cursor:default;opacity:0.55;}
+.theme-preview{width:28px;height:28px;border-radius:50%;border:2.5px solid;}
+.theme-name{font-size:7px;letter-spacing:0.5px;font-family:'Orbitron',monospace;color:rgba(255,255,255,0.6);}
+.theme-lock{position:absolute;top:2px;right:2px;font-size:8px;}
+.theme-soon{font-size:7px;color:rgba(255,255,255,0.3);letter-spacing:0.3px;}
+/* 連絡先・権利 */
+.stg-info-text{font-size:10px;color:rgba(255,255,255,0.4);line-height:1.6;font-family:'Exo 2',sans-serif;}
+.stg-info-text a{color:rgba(180,150,255,0.8);text-decoration:none;}
+/* シェアモーダル */
+#share-modal{position:absolute;inset:0;border-radius:16px;display:none;flex-direction:column;align-items:center;justify-content:center;background:rgba(6,6,15,0.95);z-index:23;gap:12px;padding:24px;}
+#share-modal-title{font-family:'Orbitron',monospace;font-size:13px;font-weight:700;color:#fff;letter-spacing:2px;}
+#share-text-preview{font-size:11px;color:rgba(255,255,255,0.5);text-align:center;background:rgba(255,255,255,0.04);border-radius:8px;padding:10px 14px;width:100%;max-width:280px;line-height:1.6;font-family:'Exo 2',sans-serif;}
+#share-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+.share-btn{display:flex;flex-direction:column;align-items:center;gap:5px;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);cursor:pointer;transition:background 0.2s;min-width:64px;-webkit-tap-highlight-color:transparent;}
+.share-btn:hover{background:rgba(255,255,255,0.10);}
+.share-btn svg{width:22px;height:22px;}
+.share-btn span{font-size:9px;color:rgba(255,255,255,0.55);letter-spacing:1px;font-family:'Orbitron',monospace;}
+#share-copy-row{display:flex;gap:8px;align-items:center;}
+#share-copy-btn{padding:8px 20px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.6);font-family:'Orbitron',monospace;font-size:10px;cursor:pointer;}
+#share-close-btn{padding:9px 28px;border:none;border-radius:8px;background:rgba(100,60,220,0.7);color:#fff;font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:2px;cursor:pointer;}
+#share-copied{font-size:10px;color:rgba(180,150,255,0.9);min-height:14px;text-align:center;}
+/* チュートリアルアイコン → SVG */
+.tut-icon-svg{width:28px;height:28px;flex-shrink:0;margin-top:2px;opacity:0.85;}
+#tut{position:absolute;inset:0;border-radius:16px;display:none;flex-direction:column;align-items:center;justify-content:center;background:rgba(6,6,15,0.97);z-index:30;padding:24px 20px;gap:10px;}
+#tut-title{font-family:'Orbitron',monospace;font-size:14px;font-weight:900;color:#fff;letter-spacing:3px;text-align:center;}
+#tut-mode{font-size:10px;letter-spacing:2px;padding:3px 12px;border-radius:10px;font-family:'Orbitron',monospace;font-weight:700;margin-bottom:2px;}
+.tut-same{background:rgba(100,60,220,0.3);color:rgba(180,150,255,0.9);}
+.tut-diff{background:rgba(220,60,60,0.25);color:rgba(255,120,100,0.9);}
+#tut-body{display:flex;flex-direction:column;gap:8px;width:100%;max-width:300px;}
+.tut-row{display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:10px 12px;}
+.tut-icon{font-size:20px;flex-shrink:0;margin-top:1px;}
+.tut-text{font-size:11px;color:rgba(255,255,255,0.65);line-height:1.6;font-family:'Exo 2',sans-serif;}
+.tut-text b{color:rgba(255,255,255,0.95);font-weight:600;}
+#tut-btn{margin-top:6px;padding:11px 40px;border:none;border-radius:8px;background:rgba(100,60,220,0.85);color:#fff;font-family:'Orbitron',monospace;font-size:12px;font-weight:700;letter-spacing:2px;cursor:pointer;}
+#tut-btn:active{transform:scale(0.96);}
 #intro-overlay{position:absolute;inset:0;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(6,6,15,0.93);z-index:25;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none;}
 #intro-bubble-wrap{position:relative;width:min(80vw,340px);height:min(80vw,340px);display:flex;align-items:center;justify-content:center;}
 /* イントロバブルのラッパーは親と同サイズ */
@@ -152,6 +214,12 @@ body{display:flex;align-items:flex-start;justify-content:center;}
   <div id="ms">
     <div id="ms-title">BUBBLE POP</div>
     <div id="ms-sub">モードを選んでスタート</div>
+    <!-- 設定ボタン -->
+    <button id="btn-settings" aria-label="設定">
+      <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
+      </svg>
+    </button>
     <div class="mcard sel" id="card-same">
       <div class="mtag tsame">SAME COLOR</div>
       <div class="mcard-t">同色連鎖モード</div>
@@ -174,7 +242,7 @@ body{display:flex;align-items:flex-start;justify-content:center;}
     <div id="ov-sub"></div>
     <button class="gbtn" id="btn-retry" style="margin-top:4px;font-size:12px;padding:10px 32px;">RETRY</button>
     <button class="sbtn" id="btn-back">モード選択へ</button>
-    <button class="sbtn" id="btn-share">結果をコピー</button>
+    <button class="sbtn" id="btn-share">結果をシェア</button>
     <div id="sc"></div>
   </div>
 
@@ -216,6 +284,117 @@ body{display:flex;align-items:flex-start;justify-content:center;}
   <div id="ci">　</div>
   <div id="grid"></div>
   <div id="bbar"><button id="bnuke">NUKE (x1)</button></div>
+
+  <!-- チュートリアルオーバーレイ -->
+  <div id="tut">
+    <div id="tut-mode" class="tut-same">SAME COLOR</div>
+    <div id="tut-title">HOW TO PLAY</div>
+    <div id="tut-body"></div>
+    <button id="tut-btn">わかった！</button>
+  </div>
+
+  <!-- 設定パネル -->
+  <div id="settings-panel">
+    <div id="settings-header">
+      <div id="settings-title">SETTINGS</div>
+      <button id="btn-settings-close">✕</button>
+    </div>
+    <div id="settings-body">
+      <!-- チュートリアル -->
+      <div class="stg-section">
+        <div class="stg-label" id="stg-label-tut">TUTORIAL</div>
+        <div class="stg-row" id="stg-tut-same">
+          <div class="stg-row-left"><div class="stg-row-label" id="stg-tut-same-label">同色モードの遊び方</div><div class="stg-row-sub" id="stg-tut-same-sub">SAME COLOR</div></div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="stg-row" id="stg-tut-diff">
+          <div class="stg-row-left"><div class="stg-row-label" id="stg-tut-diff-label">異色モードの遊び方</div><div class="stg-row-sub" id="stg-tut-diff-sub">DIFF COLOR</div></div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+      <!-- 言語 -->
+      <div class="stg-section">
+        <div class="stg-label" id="stg-label-lang">LANGUAGE</div>
+        <div class="stg-row" style="cursor:default;">
+          <div class="stg-row-label" id="stg-lang-label">表示言語</div>
+          <div class="lang-toggle">
+            <button class="lang-btn active" id="lang-jp">JP</button>
+            <button class="lang-btn" id="lang-en">EN</button>
+          </div>
+        </div>
+      </div>
+      <!-- 音量 -->
+      <div class="stg-section">
+        <div class="stg-label" id="stg-label-audio">AUDIO</div>
+        <div class="stg-row" style="cursor:default;">
+          <div class="stg-row-left"><div class="stg-row-label" id="stg-bgm-label">BGM</div><div class="stg-row-sub stg-coming-soon">準備中</div></div>
+          <input type="range" class="vol-slider" min="0" max="100" value="70" id="vol-bgm" disabled>
+        </div>
+        <div class="stg-row" style="cursor:default;">
+          <div class="stg-row-left"><div class="stg-row-label" id="stg-sfx-label">効果音</div><div class="stg-row-sub stg-coming-soon">準備中</div></div>
+          <input type="range" class="vol-slider" min="0" max="100" value="100" id="vol-sfx" disabled>
+        </div>
+      </div>
+      <!-- テーマ -->
+      <div class="stg-section">
+        <div class="stg-label" id="stg-label-theme">THEME</div>
+        <div class="theme-grid" id="theme-grid"></div>
+      </div>
+      <!-- 製作者支援 -->
+      <div class="stg-section">
+        <div class="stg-label" id="stg-label-support">SUPPORT</div>
+        <div class="stg-row" id="stg-donate" style="background:rgba(255,200,60,0.06);border:1px solid rgba(255,200,60,0.18);">
+          <div class="stg-row-left">
+            <div class="stg-row-label" id="stg-donate-label" style="color:rgba(255,210,80,0.9);">☕ 製作者を支援する</div>
+            <div class="stg-row-sub" id="stg-donate-sub">Buy Me a Coffee — ありがとうございます！</div>
+          </div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,200,60,0.5)" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+      <!-- 製作者・権利 -->
+      <div class="stg-section">
+        <div class="stg-label" id="stg-label-about">ABOUT</div>
+        <div class="stg-row" style="cursor:default;flex-direction:column;align-items:flex-start;gap:4px;">
+          <div class="stg-info-text">
+            <b style="color:rgba(255,255,255,0.8);">BUBBLE POP</b> v26<br>
+            製作：Panda<br>
+            お問い合わせ：<a href="mailto:your@email.com">your@email.com</a><br>
+            X：<a href="https://x.com/yourhandle" target="_blank">@yourhandle</a>
+          </div>
+          <div class="stg-info-text" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:6px;">
+            © 2025 Panda. All rights reserved.<br>
+            本ゲームの無断転載・改変・商業利用を禁じます。<br>
+            Font: Google Fonts (Orbitron / Exo 2)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- シェアモーダル -->
+  <div id="share-modal">
+    <div id="share-modal-title">SHARE RESULT</div>
+    <div id="share-text-preview"></div>
+    <div id="share-btns">
+      <div class="share-btn" id="share-x">
+        <svg viewBox="0 0 24 24" fill="rgba(255,255,255,0.85)"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <span>X (Twitter)</span>
+      </div>
+      <div class="share-btn" id="share-line">
+        <svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="rgba(0,195,0,0.25)"/><path d="M12 4C7.58 4 4 7.13 4 11c0 2.53 1.6 4.75 4 6.1l-.5 2.4 2.8-1.5c.54.09 1.1.14 1.7.14 4.42 0 8-3.13 8-7s-3.58-7-8-7zm-2.5 9H8v-4h1.5v4zm3.5 0h-1.5V9.5l2 2.5v-2.5H15V13h-1.5v-1.5L12 10v3z" fill="rgba(255,255,255,0.85)"/><path d="M8 9h1.5v4H8zm4-1.5h1.5v1.5H12zm0 2.5h1.5V13H12z" fill="none"/></svg>
+        <span>LINE</span>
+      </div>
+      <div class="share-btn" id="share-ig">
+        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,0.85)" stroke="none"/></svg>
+        <span>Instagram</span>
+      </div>
+    </div>
+    <div id="share-copy-row">
+      <button id="share-copy-btn">テキストをコピー</button>
+    </div>
+    <div id="share-copied"></div>
+    <button id="share-close-btn">閉じる</button>
+  </div>
 
   <!-- スタート演出オーバーレイ -->
   <div id="intro-overlay" style="display:none;">
@@ -615,15 +794,92 @@ body{display:flex;align-items:flex-start;justify-content:center;}
         },i*45);
       });
     } else {
-      resetAllBubbleTimers();
-      spawnFloat(cells[4],'+900','rgba(255,200,80,0.95)');
-      var fl=document.createElement('div');
-      fl.style.cssText='position:absolute;inset:0;border-radius:16px;background:rgba(255,200,0,0.1);z-index:15;pointer-events:none;animation:fGold 0.5s ease-out forwards;';
-      if(!document.getElementById('fGoldSt')){var st=document.createElement('style');st.id='fGoldSt';st.textContent='@keyframes fGold{0%{opacity:1;}100%{opacity:0;}}';document.head.appendChild(st);}
-      document.getElementById('gw').appendChild(fl);
-      setTimeout(function(){if(fl.parentNode)fl.parentNode.removeChild(fl);},500);
-      ci.innerHTML='<span style="color:rgba(255,200,80,0.95);">NUKE — TIMER RESET +900pt</span>';
+      // DIFFも全バブル前面破壊（SAMEと同仕様）、lastColorリセット
+      lastColor=null;
+      cells.forEach(function(cell,i){
+        if(cell.popping)return;cell.popping=true;
+        clearInterval(bubbleTimers[i]);bubbleTimers[i]=null;
+        setTimeout(function(){
+          cell.outer.classList.add('pop');
+          spawnFloat(cell,'+100','rgba(255,200,80,0.9)');
+          setTimeout(function(){
+            var pb2=cell.back;cell.front=pb2;cell.back=randC();
+            cell.popping=false;cell.outer.classList.remove('pop');
+            applyStyle(cell.outer,cell.front,cell.back);
+            setTimerRing(cell.outer,1);setBubbleScale(cell.scaleWrap,1);
+            void cell.outer.offsetWidth;cell.outer.classList.add('rev');
+            setTimeout(function(){cell.outer.classList.remove('rev');},380);
+            if(running)startOneBubbleTimer(i);
+          },240);
+        },i*45);
+      });
+      var flG=document.createElement('div');
+      flG.style.cssText='position:absolute;inset:0;border-radius:16px;background:rgba(255,200,0,0.1);z-index:15;pointer-events:none;animation:fGold 0.5s ease-out forwards;';
+      if(!document.getElementById('fGoldSt')){var stG=document.createElement('style');stG.id='fGoldSt';stG.textContent='@keyframes fGold{0%{opacity:1;}100%{opacity:0;}}';document.head.appendChild(stG);}
+      document.getElementById('gw').appendChild(flG);
+      setTimeout(function(){if(flG.parentNode)flG.parentNode.removeChild(flG);},500);
+      ci.innerHTML='<span style="color:rgba(255,200,80,0.95);">NUKE +900pt</span>';
     }
+  }
+
+  // チュートリアル
+  var tutShown={same:false,diff:false};
+  var tutEl=document.getElementById('tut');
+  var tutMode=document.getElementById('tut-mode');
+  var tutBody=document.getElementById('tut-body');
+  var tutBtn=document.getElementById('tut-btn');
+
+  var TUT_ICONS={
+    bubble:'<svg class="tut-icon-svg" viewBox="0 0 28 28" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.6" stroke-linecap="round"><circle cx="14" cy="14" r="10"/><ellipse cx="10" cy="10" rx="3" ry="2" fill="rgba(255,255,255,0.15)" stroke="none"/><circle cx="18" cy="18" r="1.5" fill="rgba(255,255,255,0.12)" stroke="none"/></svg>',
+    chain:'<svg class="tut-icon-svg" viewBox="0 0 28 28" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="14" r="4"/><circle cx="21" cy="14" r="4"/><line x1="11" y1="14" x2="17" y2="14"/><line x1="7" y1="8" x2="7" y2="4"/><line x1="21" y1="8" x2="21" y2="4"/></svg>',
+    timer:'<svg class="tut-icon-svg" viewBox="0 0 28 28" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.6" stroke-linecap="round"><circle cx="14" cy="15" r="9"/><polyline points="14,9 14,15 18,18"/><line x1="11" y1="4" x2="17" y2="4"/></svg>',
+    nuke:'<svg class="tut-icon-svg" viewBox="0 0 28 28" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="4"/><line x1="14" y1="3" x2="14" y2="7"/><line x1="14" y1="21" x2="14" y2="25"/><line x1="3" y1="14" x2="7" y2="14"/><line x1="21" y1="14" x2="25" y2="14"/><line x1="6" y1="6" x2="9" y2="9"/><line x1="19" y1="19" x2="22" y2="22"/><line x1="22" y1="6" x2="19" y2="9"/><line x1="9" y1="19" x2="6" y2="22"/></svg>',
+    heart:'<svg class="tut-icon-svg" viewBox="0 0 28 28" fill="rgba(255,80,80,0.3)" stroke="rgba(255,100,100,0.8)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 22s-9-5.5-9-12a5 5 0 0110 0 5 5 0 0110 0c0 6.5-9 12-11 12z"/></svg>',
+    color:'<svg class="tut-icon-svg" viewBox="0 0 28 28" fill="none" stroke-width="1.5" stroke-linecap="round"><circle cx="9" cy="12" r="5" stroke="rgba(255,68,85,0.8)" fill="rgba(255,68,85,0.15)"/><circle cx="19" cy="12" r="5" stroke="rgba(34,170,255,0.8)" fill="rgba(34,170,255,0.15)"/><circle cx="14" cy="19" r="5" stroke="rgba(255,221,0,0.8)" fill="rgba(255,221,0,0.15)"/></svg>',
+    hourglass:'<svg class="tut-icon-svg" viewBox="0 0 28 28" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h12M8 24h12M10 4c0 4 4 6 4 10s-4 6-4 10M18 4c0 4-4 6-4 10s4 6 4 10"/></svg>',
+  };
+
+  var TUT_CONTENT={
+    same:[
+      {icon:TUT_ICONS.bubble,text:'<b>バブルをタップ</b>して破壊しよう。バブルには持ち時間があり、時間切れで<b>−1000pt</b>のペナルティ。'},
+      {icon:TUT_ICONS.chain,text:'<b>同じ色を連続</b>して壊すほど得点アップ。6連鎖でMAX <b>900pt</b>（×フェーズ倍率）。'},
+      {icon:TUT_ICONS.timer,text:'<b>20秒制</b>。残り10秒で×2、残り5秒で×3の倍率がかかる。'},
+      {icon:TUT_ICONS.nuke,text:'<b>NUKEボタン</b>で全バブルを一気に破壊（+900pt）。1回限り。'},
+    ],
+    diff:[
+      {icon:TUT_ICONS.bubble,text:'<b>バブルをタップ</b>して破壊。<b>直前と同じ色</b>を壊すとミス！残機が1つ減る。'},
+      {icon:TUT_ICONS.heart,text:'残機は<b>3つ</b>。ミスまたは時間切れで1消費。3回でゲームオーバー。'},
+      {icon:TUT_ICONS.color,text:'過去<b>5色が2色のみ</b>なら <b>2COLOR +300pt</b>。直近<b>4色に3色が揃う</b>と <b>3COLOR +300pt</b>。'},
+      {icon:TUT_ICONS.hourglass,text:'20秒ごとにバブル破壊の<b>基礎ポイントが+20pt</b>ずつ上昇。長く生き残るほど有利。'},
+      {icon:TUT_ICONS.nuke,text:'<b>NUKEボタン</b>で全バブルを破壊（+900pt）。1回限り。'},
+    ]
+  };
+
+  function showTutorial(mode,onClose){
+    var L=LANG[currentLang];
+    var modeLabel=mode==='same'?'SAME COLOR':'DIFF COLOR';
+    document.getElementById('tut-mode').textContent=modeLabel;
+    document.getElementById('tut-mode').className=mode==='same'?'tut-same':'tut-diff';
+    document.getElementById('tut-title').textContent=L.tutTitle;
+    tutBody.innerHTML='';
+    var icons=mode==='same'
+      ?[TUT_ICONS.bubble,TUT_ICONS.chain,TUT_ICONS.timer,TUT_ICONS.nuke]
+      :[TUT_ICONS.bubble,TUT_ICONS.heart,TUT_ICONS.color,TUT_ICONS.hourglass,TUT_ICONS.nuke];
+    var texts=mode==='same'?L.tutSame:L.tutDiff;
+    icons.forEach(function(icon,i){
+      var d=document.createElement('div');d.className='tut-row';
+      d.innerHTML=icon+'<div class="tut-text">'+texts[i]+'</div>';
+      tutBody.appendChild(d);
+    });
+    tutEl.style.display='flex';
+    function close(){
+      tutEl.style.display='none';
+      tutBtn.removeEventListener('click',close);
+      tutBtn.removeEventListener('touchstart',close);
+      onClose();
+    }
+    tutBtn.addEventListener('click',close);
+    tutBtn.addEventListener('touchstart',function(e){e.preventDefault();close();},{passive:false});
   }
 
   // イントロ演出
@@ -689,7 +945,13 @@ body{display:flex;align-items:flex-start;justify-content:center;}
       updateBonusUI();
     }
     buildGrid();buildHist();
-    showIntro();
+    // 初回プレイ（過去履歴なし）のみチュートリアル表示
+    if(scoreHistory[gameMode].length===0&&!tutShown[gameMode]){
+      tutShown[gameMode]=true;
+      showTutorial(gameMode,function(){showIntro();});
+    } else {
+      showIntro();
+    }
   }
 
   function actualStartGame(){
@@ -789,15 +1051,248 @@ body{display:flex;align-items:flex-start;justify-content:center;}
   });
   bnuke.addEventListener('click',doNuke);
   bnuke.addEventListener('touchstart',function(e){e.preventDefault();doNuke();},{passive:false});
-  document.getElementById('btn-share').addEventListener('click',function(){
+  // ===== テーマ定義 =====
+  var THEMES=[
+    {id:'default',name:'DEFAULT',free:true,preview:{bg:'#06060f',rim:'rgba(180,150,255,0.8)',body:'rgba(120,80,240,0.2)'}},
+    {id:'ocean',name:'OCEAN',free:true,preview:{bg:'#040f1a',rim:'rgba(60,170,255,0.8)',body:'rgba(20,100,200,0.2)'}},
+    {id:'ember',name:'EMBER',free:true,preview:{bg:'#0f0604',rim:'rgba(255,100,60,0.8)',body:'rgba(200,60,20,0.2)'}},
+    {id:'aurora',name:'AURORA',free:false,preview:{bg:'#04100a',rim:'rgba(80,240,160,0.8)',body:'rgba(20,180,100,0.2)'}},
+    {id:'rose',name:'ROSE',free:false,preview:{bg:'#100408',rim:'rgba(255,100,160,0.8)',body:'rgba(200,40,100,0.2)'}},
+    {id:'gold',name:'GOLD',free:false,preview:{bg:'#0f0d04',rim:'rgba(255,210,60,0.8)',body:'rgba(200,160,20,0.2)'}},
+  ];
+  var currentTheme='default';
+
+  function buildThemeGrid(){
+    var tg=document.getElementById('theme-grid');tg.innerHTML='';
+    THEMES.forEach(function(t){
+      var c=document.createElement('div');
+      c.className='theme-card'+(t.id===currentTheme?' active':'')+(t.free?'':' locked');
+      var prev='<div class="theme-preview" style="background:'+t.preview.body+';border-color:'+t.preview.rim+';box-shadow:0 0 10px '+t.preview.rim+'40;"></div>';
+      var lock=t.free?'':'<div class="theme-lock">🔒</div>';
+      var soon=t.free?'':'<div class="theme-soon">準備中</div>';
+      c.innerHTML=prev+'<div class="theme-name">'+t.name+'</div>'+lock+soon;
+      if(t.free){c.addEventListener('click',function(){currentTheme=t.id;buildThemeGrid();});}
+      tg.appendChild(c);
+    });
+  }
+  buildThemeGrid();
+
+  // ===== 設定パネル =====
+  var settingsPanel=document.getElementById('settings-panel');
+  document.getElementById('btn-settings').addEventListener('click',function(){settingsPanel.style.display='flex';});
+  document.getElementById('btn-settings-close').addEventListener('click',function(){settingsPanel.style.display='none';});
+  document.getElementById('stg-donate').addEventListener('click',function(){
+    window.open('https://buymeacoffee.com/yourname','_blank'); // ← URLを後で差し替え
+  });
+  document.getElementById('stg-tut-same').addEventListener('click',function(){
+    settingsPanel.style.display='none';
+    showTutorial('same',function(){settingsPanel.style.display='flex';});
+  });
+  document.getElementById('stg-tut-diff').addEventListener('click',function(){
+    settingsPanel.style.display='none';
+    showTutorial('diff',function(){settingsPanel.style.display='flex';});
+  });
+  // 言語切り替え
+  var currentLang='jp';
+  var LANG={
+    jp:{
+      // モード選択
+      msSub:'モードを選んでスタート',
+      sameTitle:'同色連鎖モード',
+      sameDesc:'同じ色を連続して壊すほど得点加速。20秒間で高スコアを狙え。バブルは時間切れで自動更新。全破壊1回使用可。',
+      diffTitle:'異色連鎖モード',
+      diffDesc:'同色2連続でゲームオーバー。2COLOR(過去5色)と3COLOR(直近4色)のボーナスを狙え。残機3つ。',
+      start:'START',
+      // リザルト
+      retry:'RETRY',
+      back:'モード選択へ',
+      share:'結果をシェア',
+      // チュートリアル
+      tutBtn:'わかった！',
+      tutTitle:'HOW TO PLAY',
+      // 設定
+      stgTitle:'SETTINGS',
+      stgLabelTut:'TUTORIAL',
+      stgTutSame:'同色モードの遊び方',
+      stgTutSameSub:'SAME COLOR',
+      stgTutDiff:'異色モードの遊び方',
+      stgTutDiffSub:'DIFF COLOR',
+      stgLabelLang:'LANGUAGE',
+      stgLangLabel:'表示言語',
+      stgLabelAudio:'AUDIO',
+      stgBgm:'BGM',
+      stgSfx:'効果音',
+      stgComingSoon:'準備中',
+      stgLabelTheme:'THEME',
+      stgLabelSupport:'SUPPORT',
+      stgDonate:'☕ 製作者を支援する',
+      stgDonateSub:'Buy Me a Coffee — ありがとうございます！',
+      stgLabelAbout:'ABOUT',
+      stgLockLabel:'準備中',
+      // シェア
+      shareTitle:'SHARE RESULT',
+      shareCopy:'テキストをコピー',
+      shareClose:'閉じる',
+      shareCopied:'コピーしました！',
+      shareIgNote:'テキストをコピーしました。Instagramに貼り付けてシェアしてください！',
+      // チュートリアル本文
+      tutSame:[
+        'バブルをタップして破壊しよう。バブルには持ち時間があり、時間切れで−1000ptのペナルティ。',
+        '同じ色を連続して壊すほど得点アップ。6連鎖でMAX 900pt（×フェーズ倍率）。',
+        '20秒制。残り10秒で×2、残り5秒で×3の倍率がかかる。',
+        'NUKEボタンで全バブルを一気に破壊（+900pt）。1回限り。',
+      ],
+      tutDiff:[
+        'バブルをタップして破壊。直前と同じ色を壊すとミス！残機が1つ減る。',
+        '残機は3つ。ミスまたは時間切れで1消費。3回でゲームオーバー。',
+        '過去5色が2色のみなら 2COLOR +300pt。直近4色に3色が揃うと 3COLOR +300pt。',
+        '20秒ごとにバブル破壊の基礎ポイントが+20ptずつ上昇。長く生き残るほど有利。',
+        'NUKEボタンで全バブルを破壊（+900pt）。1回限り。',
+      ],
+    },
+    en:{
+      msSub:'Select a mode to start',
+      sameTitle:'Same Color Mode',
+      sameDesc:'Chain the same color to boost your score. 20-second limit. Bubbles auto-refresh on timeout. NUKE once per game.',
+      diffTitle:'Diff Color Mode',
+      diffDesc:'Two of the same color in a row ends the game. Go for 2COLOR and 3COLOR bonuses. 3 lives.',
+      start:'START',
+      retry:'RETRY',
+      back:'Back to Mode Select',
+      share:'Share Result',
+      tutBtn:'Got it!',
+      tutTitle:'HOW TO PLAY',
+      stgTitle:'SETTINGS',
+      stgLabelTut:'TUTORIAL',
+      stgTutSame:'How to Play: Same Color',
+      stgTutSameSub:'SAME COLOR',
+      stgTutDiff:'How to Play: Diff Color',
+      stgTutDiffSub:'DIFF COLOR',
+      stgLabelLang:'LANGUAGE',
+      stgLangLabel:'Display Language',
+      stgLabelAudio:'AUDIO',
+      stgBgm:'BGM',
+      stgSfx:'Sound Effects',
+      stgComingSoon:'Coming Soon',
+      stgLabelTheme:'THEME',
+      stgLabelSupport:'SUPPORT',
+      stgDonate:'☕ Support the Developer',
+      stgDonateSub:'Buy Me a Coffee — Thank you!',
+      stgLabelAbout:'ABOUT',
+      stgLockLabel:'Coming Soon',
+      shareTitle:'SHARE RESULT',
+      shareCopy:'Copy Text',
+      shareClose:'Close',
+      shareCopied:'Copied!',
+      shareIgNote:'Text copied. Paste it into Instagram to share!',
+      tutSame:[
+        'Tap bubbles to pop them. Each bubble has a timer — let it expire and lose 1000pt.',
+        'Chain the same color for bonus points. 6-chain = MAX 900pt (×phase multiplier).',
+        '20-second limit. ×2 multiplier at 10s left, ×3 at 5s left.',
+        'NUKE button destroys all bubbles (+900pt). One use only.',
+      ],
+      tutDiff:[
+        'Tap bubbles to pop them. Popping the same color as before is a MISS — lose 1 life.',
+        '3 lives total. Lose 1 on miss or timeout. Game over at 0.',
+        '2COLOR +300pt if last 5 pops use only 2 colors. 3COLOR +300pt if all 3 colors appear in last 4 pops.',
+        'Every 20s, base pop points increase by +20pt. Survive longer to score more.',
+        'NUKE button destroys all bubbles (+900pt). One use only.',
+      ],
+    }
+  };
+
+  function applyLang(lang){
+    currentLang=lang;
+    var L=LANG[lang];
+    // モード選択
+    document.getElementById('ms-sub').textContent=L.msSub;
+    document.querySelector('#card-same .mcard-t').textContent=L.sameTitle;
+    document.querySelector('#card-same .mcard-d').textContent=L.sameDesc;
+    document.querySelector('#card-diff .mcard-t').textContent=L.diffTitle;
+    document.querySelector('#card-diff .mcard-d').textContent=L.diffDesc;
+    document.getElementById('btn-go').textContent=L.start;
+    // リザルト
+    document.getElementById('btn-retry').textContent=L.retry;
+    document.getElementById('btn-back').textContent=L.back;
+    document.getElementById('btn-share').textContent=L.share;
+    // チュートリアル
+    document.getElementById('tut-btn').textContent=L.tutBtn;
+    document.getElementById('tut-title').textContent=L.tutTitle;
+    // 設定パネル
+    document.getElementById('settings-title').textContent=L.stgTitle;
+    document.getElementById('stg-label-tut').textContent=L.stgLabelTut;
+    document.getElementById('stg-tut-same-label').textContent=L.stgTutSame;
+    document.getElementById('stg-tut-same-sub').textContent=L.stgTutSameSub;
+    document.getElementById('stg-tut-diff-label').textContent=L.stgTutDiff;
+    document.getElementById('stg-tut-diff-sub').textContent=L.stgTutDiffSub;
+    document.getElementById('stg-label-lang').textContent=L.stgLabelLang;
+    document.getElementById('stg-lang-label').textContent=L.stgLangLabel;
+    document.getElementById('stg-label-audio').textContent=L.stgLabelAudio;
+    document.getElementById('stg-bgm-label').textContent=L.stgBgm;
+    document.getElementById('stg-sfx-label').textContent=L.stgSfx;
+    document.querySelectorAll('.stg-coming-soon').forEach(function(el){el.textContent=L.stgComingSoon;});
+    document.getElementById('stg-label-theme').textContent=L.stgLabelTheme;
+    document.getElementById('stg-label-support').textContent=L.stgLabelSupport;
+    document.getElementById('stg-donate-label').textContent=L.stgDonate;
+    document.getElementById('stg-donate-sub').textContent=L.stgDonateSub;
+    document.getElementById('stg-label-about').textContent=L.stgLabelAbout;
+    document.querySelectorAll('.theme-soon').forEach(function(el){el.textContent=L.stgLockLabel;});
+    // シェアモーダル
+    document.getElementById('share-modal-title').textContent=L.shareTitle;
+    document.getElementById('share-copy-btn').textContent=L.shareCopy;
+    document.getElementById('share-close-btn').textContent=L.shareClose;
+    // 言語ボタン
+    document.getElementById('lang-jp').classList.toggle('active',lang==='jp');
+    document.getElementById('lang-en').classList.toggle('active',lang==='en');
+  }
+  document.getElementById('lang-jp').addEventListener('click',function(){applyLang('jp');});
+  document.getElementById('lang-en').addEventListener('click',function(){applyLang('en');});
+
+  // ===== シェアモーダル =====
+  var shareModal=document.getElementById('share-modal');
+  var sharePreview=document.getElementById('share-text-preview');
+
+  function getShareText(){
     var ml=gameMode==='same'?'SAME':'DIFF';
     var ex=gameMode==='diff'?' ('+elapsedSec+'s)':'';
-    var text='BUBBLE POP ['+ml+'] '+score+'pt'+ex+' / BEST:'+best[gameMode]+'pt';
-    if(navigator.clipboard)navigator.clipboard.writeText(text).then(function(){
-      document.getElementById('sc').textContent='Copied!';
-      setTimeout(function(){document.getElementById('sc').textContent='';},2000);
+    return 'BUBBLE POP ['+ml+'] '+score+'pt'+ex+' / BEST:'+best[gameMode]+'pt #BUBBLEPOP';
+  }
+
+  document.getElementById('btn-share').addEventListener('click',function(){
+    var txt=getShareText();
+    sharePreview.textContent=txt;
+    shareModal.style.display='flex';
+  });
+  document.getElementById('share-close-btn').addEventListener('click',function(){shareModal.style.display='none';});
+  document.getElementById('share-copy-btn').addEventListener('click',function(){
+    var txt=getShareText();
+    if(navigator.clipboard)navigator.clipboard.writeText(txt).then(function(){
+      document.getElementById('share-copied').textContent=LANG[currentLang].shareCopied;
+      setTimeout(function(){document.getElementById('share-copied').textContent='';},2000);
     });
   });
+  document.getElementById('share-x').addEventListener('click',function(){
+    var txt=encodeURIComponent(getShareText());
+    window.open('https://x.com/intent/tweet?text='+txt,'_blank');
+  });
+  document.getElementById('share-line').addEventListener('click',function(){
+    var txt=encodeURIComponent(getShareText());
+    window.open('https://social-plugins.line.me/lineit/share?url=&text='+txt,'_blank');
+  });
+  document.getElementById('share-ig').addEventListener('click',function(){
+    var txt=getShareText();
+    if(navigator.clipboard)navigator.clipboard.writeText(txt).then(function(){
+      document.getElementById('share-copied').textContent=LANG[currentLang].shareIgNote;
+      setTimeout(function(){document.getElementById('share-copied').textContent='';},3500);
+    });
+  });
+
+  // タッチ対応
+  ['share-x','share-line','share-ig','share-copy-btn','share-close-btn','btn-settings','btn-settings-close','stg-tut-same','stg-tut-diff','stg-donate','lang-jp','lang-en'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el)el.addEventListener('touchstart',function(e){e.preventDefault();el.click();},{passive:false});
+  });
+
   buildHist();
 })();
 </script>
